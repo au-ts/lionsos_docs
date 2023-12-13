@@ -1,7 +1,7 @@
 +++
 title = 'Hardware setup'
 date = 2023-12-12T21:00:47+11:00
-draft = false 
+draft = false
 +++
 
 # Setting up your Odroid-C4 hardware

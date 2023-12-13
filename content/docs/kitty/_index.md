@@ -16,5 +16,9 @@ system intended to be used for buying snacks in the Trustworthy Systems
 Lab.
 
 {{< hint danger >}}
-**TODO: add picture**  
+**TODO: add picture of case/deployed version**
 {{< /hint >}}
+
+## Architecture (work-in-progress)
+
+![Kitty architecture diagram](/kitty.png)
