@@ -8,8 +8,8 @@ draft = false
 
 When first booting up the system you will see the MicroPython REPL prompt:
 ```sh
-MICROPYTHON|INFO: initialising!
-MicroPython ac783c460-dirty on 2023-07-31; Odroid-C4 with Cortex A55
+MP|INFO: initialising!
+MicroPython v1.20.0-328-g01c758e26 on 2023-12-19; Odroid-C4 with Cortex A55
 >>>
 ```
 
