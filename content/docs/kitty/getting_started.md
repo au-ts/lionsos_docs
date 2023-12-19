@@ -4,7 +4,11 @@ date = 2023-12-12T21:00:47+11:00
 draft = false
 +++
 
-# The Kitty system
+# Building the Kitty system
+
+{{< hint danger >}}
+Building on macOS is currently having issues, please follow instructions for Linux in the meantime.
+{{< /hint >}}
 
 ## Acquire source code
 
@@ -14,8 +18,9 @@ cd LionsOS
 git submodule update --init
 ```
 
-## Installing dependencies
+## Dependencies
 
+Run the following commands depending on your machine:
 {{< tabs "dependencies" >}}
 {{< tab "Ubuntu/Debian" >}}
 ```sh
@@ -42,8 +47,9 @@ nix-shell --pure examples/kitty
 {{< /tab >}}
 {{< /tabs >}}
 
-### Acquiring the Microkit SDK
+### Acquire the Microkit SDK
 
+Run the following commands depending on your machine:
 {{< tabs "microkit-sdk" >}}
 {{< tab "Linux (x64)" >}}
 ```sh
@@ -65,10 +71,25 @@ tar xf microkit-sdk-macos-x64.tar.gz
 {{< /tab >}}
 {{< /tabs >}}
 
+### Acquire the AArch64 toolchain
+
+Run the following commands:
+```sh
+wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz?revision=79f65c42-1a1b-43f2-acb7-a795c8427085&hash=61BBFB526E785D234C5D8718D9BA8E61
+tar xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz\?revision=79f65c42-1a1b-43f2-acb7-a795c8427085\&hash=61BBFB526E785D234C5D8718D9BA8E61
+```
+
+Then add the `gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin` directory to your `PATH`.
+
 ## Compiling the Kitty system
 
 ```sh
 cd examples/kitty
+# Configuration for the NFS server
+export NFS_SERVER=0.0.0.0 # IP adddress of NFS server
+export NFS_DIRECTORY=/path/to/dir # NFS directory to mount
+# Define path to libgcc, where $GCC is the GCC toolchain downloaded above
+export LIBGCC=$GCC/lib/gcc/aarch64-none-elf/11.3.1
 make MICROKIT_SDK=/path/to/sdk -j$(nproc)
 ```
 
