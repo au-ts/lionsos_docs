@@ -53,20 +53,20 @@ Run the following commands depending on your machine:
 {{< tabs "microkit-sdk" >}}
 {{< tab "Linux (x64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/lionsos/microkit-sdk-linux-x64.tar.gz
-tar xf microkit-sdk-linux-x64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-linux-x86-64.tar.gz
+tar xf microkit-sdk-dev-4f717f2-linux-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (ARM64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/lionsos/microkit-sdk-macos-arm64.tar.gz
-tar xf microkit-sdk-macos-arm64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-macos-aarch64.tar.gz
+tar xf microkit-sdk-dev-4f717f2-macos-aarch64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (x64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/lionsos/microkit-sdk-macos-x64.tar.gz
-tar xf microkit-sdk-macos-x64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-macos-x86-64.tar.gz
+tar xf microkit-sdk-dev-4f717f2-macos-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< /tabs >}}
