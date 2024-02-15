@@ -10,7 +10,7 @@ The example system targets the HardKernel Odroid-C4 platform as it is a fairly i
 
 The Odroid-C4 is available for purchase [directly from HardKernel](https://www.hardkernel.com/shop/odroid-c4/).
 
-All the documentation for Odroid-C4 is avaiable [here](https://wiki.odroid.com/odroid-c4/odroid-c4).
+Official documentation for the Odroid-C4 is available [here](https://wiki.odroid.com/odroid-c4/odroid-c4).
 
 ## What you will also need
 
@@ -24,7 +24,9 @@ TODO pictures of setting everything up (UART, power, microSD or eMMC)
 
 ## Power and serial connections
 
-TODO
+TODO: add notes for connecting power and UART to USB device
+
+TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a picture
 
 ## Flashing U-Boot
 
@@ -36,7 +38,7 @@ here.
 TODO, have instructions for building custom U-Boot in case the reader needs some specific
 config option in U-Boot that isn't in the default one.
 
-TODO, an option is to have a tar.gz that contians the image *as well as* the `uboot.env` file
+TODO, an option is to have a tar.gz that contains the image *as well as* the `uboot.env` file
 so that they don't have to configure U-Boot manually.
 
 ## Configuring U-Boot
@@ -50,10 +52,10 @@ You will want to stop the autoboot immediately. From here,
 we want to setup the U-Boot environment to automatically load
 the system image. There are two main ways of getting system images
 into U-Boot:
-* The frst is booting via the network (**recommended**), which is where you have a TFTP server
+1. (**recommended**) Booting via the network. Where you have a TFTP server
   on some other computer that transfers the system image to U-Boot
   on the Odroid-C4 via the network.
-* The other option is to use a storage device such as an SD card or eMMC.
+2. Using a storage device such as an SD card or eMMC.
 
 TODO, only tested these instructions via SD card, not via eMMC yet.
 

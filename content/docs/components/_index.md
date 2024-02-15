@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
-title: "Services"
+title: "Components"
 ---
 
-# Services
+# Components

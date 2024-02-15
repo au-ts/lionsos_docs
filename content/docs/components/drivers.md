@@ -23,6 +23,26 @@ Currently LionsOS offers a variety of device classes, such as:
 * I<sup>2</sup>C
 * Block
 
+## Serial
+
+{{< hint danger >}}
+**TODO**
+{{< /hint >}}
+
 ## Networking
+
+{{< hint danger >}}
+**TODO**
+{{< /hint >}}
+
 ## I<sup>2</sup>C
+
+{{< hint danger >}}
+**TODO**
+{{< /hint >}}
+
 ## Block
+
+{{< hint danger >}}
+**TODO**
+{{< /hint >}}
