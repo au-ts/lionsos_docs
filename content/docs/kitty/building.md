@@ -11,6 +11,7 @@ Building on macOS is currently having issues, please follow instructions for Lin
 {{< /hint >}}
 
 ## Acquire source code
+(this takes around 1.7Gb to download)
 
 ```sh
 git clone git@github.com:au-ts/LionsOS.git
@@ -52,36 +53,52 @@ nix-shell --pure examples/kitty
 Run the following commands depending on your machine:
 {{< tabs "microkit-sdk" >}}
 {{< tab "Linux (x64)" >}}
+
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-linux-x86-64.tar.gz
-tar xf microkit-sdk-dev-4f717f2-linux-x86-64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-linux-x86-64.tar.gz
+tar xf microkit-sdk-dev-7c679ea-linux-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (ARM64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-macos-aarch64.tar.gz
-tar xf microkit-sdk-dev-4f717f2-macos-aarch64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-macos-aarch64.tar.gz
+tar xf microkit-sdk-dev-7c679ea-macos-aarch64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (x64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-4f717f2-macos-x86-64.tar.gz
-tar xf microkit-sdk-dev-4f717f2-macos-x86-64.tar.gz
+wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-macos-x86-64.tar.gz
+tar xf microkit-sdk-dev-7c679ea-macos-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< /tabs >}}
 
 ### Acquire the AArch64 toolchain
 
-Run the following commands:
+There is a choice of toolchains at [ARM Toolchains](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+We're currently using GCC 12.
+
+For Linux, run the following commands:
 ```sh
-wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz?revision=79f65c42-1a1b-43f2-acb7-a795c8427085&hash=61BBFB526E785D234C5D8718D9BA8E61
-tar xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz\?revision=79f65c42-1a1b-43f2-acb7-a795c8427085\&hash=61BBFB526E785D234C5D8718D9BA8E61
+wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz?rev=a8bbb76353aa44a69ce6b11fd560142d&hash=20124930455F791137DDEA1F0AF79B10' \
+    -O arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz
+tar xf arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz
 ```
 
-Then add the `gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin` directory to your `PATH`.
+For MacOSX the URLs are
+https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf.tar.xz?rev=78193d7740294ebe8dbaa671bb5011b2&hash=1DF8812C4FFB7B78C589E702CFDE4471
+for X86, and https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf.tar.xz?rev=cc2c1d03bcfe414f82b9d5b30d3a3d0d&hash=FBA1F3807EC2AA946B3170422669D15A
+for Apple ARM.
 
+Then add the `.../arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf/bin`
+directory to your `PATH`.
+```sh
+export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf/bin:$PATH
+```
 ## Compiling the Kitty system
+
+The Kitty system, when running, takes files from an NFSv3 server.  The
+address of this server has to be known at build time.
 
 ```sh
 cd examples/kitty
@@ -89,7 +106,7 @@ cd examples/kitty
 export NFS_SERVER=0.0.0.0 # IP adddress of NFS server
 export NFS_DIRECTORY=/path/to/dir # NFS directory to mount
 # Define path to libgcc, where $GCC is the GCC toolchain downloaded above
-export LIBGCC=$GCC/lib/gcc/aarch64-none-elf/11.3.1
+export LIBGCC=$(dirname $(realpath $(aarch64-none-elf-gcc --print-file-name libgcc.a)))
 make MICROKIT_SDK=/path/to/sdk -j$(nproc)
 ```
 
