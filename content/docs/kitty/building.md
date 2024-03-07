@@ -10,8 +10,8 @@ draft = false
 (this takes around 1.7Gb to download)
 
 ```sh
-git clone git@github.com:au-ts/LionsOS.git
-cd LionsOS
+git clone git@github.com:au-ts/lionsos.git
+cd lionsos
 git submodule update --init
 ```
 
