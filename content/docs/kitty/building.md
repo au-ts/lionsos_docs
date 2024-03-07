@@ -6,10 +6,6 @@ draft = false
 
 # Building the Kitty system
 
-{{< hint danger >}}
-Building on macOS is currently having issues, please follow instructions for Linux in the meantime.
-{{< /hint >}}
-
 ## Acquire source code
 (this takes around 1.7Gb to download)
 
