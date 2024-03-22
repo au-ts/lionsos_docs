@@ -12,6 +12,18 @@ The Odroid-C4 is available for purchase [directly from HardKernel](https://www.h
 
 Official documentation for the Odroid-C4 is available [here](https://wiki.odroid.com/odroid-c4/odroid-c4).
 
+![test](/all_hardware.jpeg)
+
+| Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
+| ----------- | ----------- | - | - | - |
+| HardKernel Odroid-C4 SBC | | 150 | 1 | 1 |
+| UART to USB converter | | 150 | 1 | 1 |
+| Power Supply | | 150 | 1 | 1 |
+| NFC card reader | | 150 | 1 | 1 |
+| VU7C touchscreen display | | 150 | 1 | 1 |
+| Ethernet cable | | 150 | 1 | 1 |
+| Female to female pin cables | | 150 | 1 | 1 |
+
 ## What you will also need
 
 In addition to the Odroid-C4 itself, you will need a couple of pieces before you can boot the system:
@@ -22,11 +34,17 @@ In addition to the Odroid-C4 itself, you will need a couple of pieces before you
 
 TODO pictures of setting everything up (UART, power, microSD or eMMC)
 
-## Power and serial connections
+## Connecting everything together
 
 TODO: add notes for connecting power and UART to USB device
 
 TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a picture
+
+### UART to USB converter
+
+### PN532 NFC card reader
+
+### VU7C touchscreen display
 
 ## Flashing U-Boot
 
