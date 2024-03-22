@@ -14,6 +14,8 @@ Official documentation for the Odroid-C4 is available [here](https://wiki.odroid
 
 ![test](/all_hardware.jpeg)
 
+## What you will need
+
 | Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
 | ----------- | ----------- | - | - | - |
 | HardKernel Odroid-C4 SBC | | 150 | 1 | 1 |
@@ -23,8 +25,6 @@ Official documentation for the Odroid-C4 is available [here](https://wiki.odroid
 | VU7C touchscreen display | | 150 | 1 | 1 |
 | Ethernet cable | | 150 | 1 | 1 |
 | Female to female pin cables | | 150 | 1 | 1 |
-
-## What you will also need
 
 In addition to the Odroid-C4 itself, you will need a couple of pieces before you can boot the system:
 
@@ -36,6 +36,8 @@ TODO pictures of setting everything up (UART, power, microSD or eMMC)
 
 ## Connecting everything together
 
+This section will show you how to connect all the hardware pieces you have to your Odroid-C4.
+
 TODO: add notes for connecting power and UART to USB device
 
 TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a picture
@@ -44,7 +46,28 @@ TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a 
 
 ### PN532 NFC card reader
 
+Below is the NFC card reader that we use. You will want to note two things:
+1. We need the NFC card reader to be in I<sup>2</sup>C mode, which means that the pins on the
+   bottom left need to be in a certain configuration. For I<sup>2</sup>C, pin 1 needs to be set
+   and pin 2 needs to be not set. The image below has the correct setup.
+2. On the left are the pins that will connect to Odroid-C4. If you are using the display, this will
+   connect to the GPIO pins exposed on the back of the display. If you are not using the display,
+   these will connect directly to the GPIO pins on the Odroid-C4.
+
+<img src="/nfc_card_reader.jpeg" alt="PN532 NFC card reader close up" width="300"/>
+
+#### With display
+
+#### Without display
+
 ### VU7C touchscreen display
+
+The display is fairly easy to connect, at the back you will see a bunch of GPIO inserts which you want
+to align with the GPIO pins on the Odroid-C4.
+
+### Network cable
+
+If you want to use the NFS client
 
 ## Flashing U-Boot
 
