@@ -14,10 +14,10 @@ As at the time of writing, the MAC addresses are:
 | Component   |      MAC       |
 |:------------|:--------------:|
 | NFS         | 52:54:1:0:0:10 |
-| microPython | 52:54:1:0:0:11 |
+| MicroPython | 52:54:1:0:0:11 |
 
 The Kitty needs an NFSv3 server, whose address is known at build
-time.  Its micropython interpreter can import python modules from the
+time.  Its MicroPython interpreter can import python modules from the
 NFS filesystem.  The NFSv3 server has to be set up to export to
 whatever IP address the NFS component is given by DHCP.
 
