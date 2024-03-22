@@ -20,6 +20,9 @@ Lab.
 **TODO: add picture of case/deployed version**
 {{< /hint >}}
 
-## Architecture (work-in-progress)
+## Architecture
 
-![Kitty architecture diagram](/kitty.png)
+Below is a diagram of the (simplified) architecutre of the Kitty system that contains
+all of the components involved.
+
+![Kitty architecture diagram](/kitty_architecture.svg)
