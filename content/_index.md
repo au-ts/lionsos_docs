@@ -14,7 +14,7 @@ LionsOS is an operating system framework based on the seL4 microkernel
 with the goal of making the achievements of seL4 accessible. That is,
 to provide performance, security, and reliability.
 
-It is not a complete operating system, but contains composable
+It is not a conventional operating system, but contains composable
 components for creating custom operating systems that are specific to
 a particular task.  Components are joined together using the
 [Microkit](https://github.com/seL4/microkit) tool.
@@ -30,8 +30,9 @@ are:
    hardware interface and a set of queues to talk to the rest of the
    system.
 
-1. Where drivers need to be shared, extra components called
-   _virtualisers_ handle multiplexing and control.
+1. Components called
+   _virtualisers_ handle multiplexing and control, and conversion
+   between virtual and IO addresses for drivers
    
 1. Information is shared only where necessary, via the queues, or via
    published information pages.
