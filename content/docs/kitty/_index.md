@@ -23,6 +23,6 @@ Lab.
 ## Architecture
 
 Below is a diagram of the (simplified) architecutre of the Kitty system that contains
-all of the components involved.
+all of the various components involved.
 
 ![Kitty architecture diagram](/kitty_architecture.svg)
