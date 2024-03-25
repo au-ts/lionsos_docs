@@ -1,7 +1,7 @@
 +++
 title = "Driver Virtual Machines"
 date = 2024-02-19T06:34:24+11:00
-draft = true
+draft = false
 +++
 
 
@@ -50,10 +50,11 @@ Creating the VMM
 
 The virtual machine that comes with LionsOS is a library.  You need to
 provide a driver file that sets things up for the environment you're
-running the system in.
+running the system in.  Entry points for the library are documented at
+[components/virtual_machines]{../../components/virtual_machines}
 
 There is a sample file in the LionsOS
-[Examples](https://github.com/au-ts/LionsOS/examples/vmm-passthrough/)
+[Examples](https://github.com/au-ts/LionsOS/tree/main/examples/vmm-examples/vmm/vmm.c)
 directory.
 
 ### The file `vmm.c`

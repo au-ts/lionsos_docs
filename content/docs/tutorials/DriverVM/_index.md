@@ -26,7 +26,7 @@ the sDDF.
 
 # Steps we're going to take
 
-1. Get a [virtual machine using LionsOS](driver_vm) working on the target platform,
+1. Get a [virtual machine using LionsOS](/docs/tutorials/drivervm/driver_vm) working on the target platform,
    with all devices passed through.  This allows us to be sure the
    virtualisation system is working, and to set up a development
    environment using the target's local storage.
