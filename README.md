@@ -23,8 +23,7 @@ Each page is written using Markdown and can be found in `content/docs/`.
 
 If you are developing the documentation and want to preview your changes, run:
 ```sh
-git submodule update --init
-hugo serve
+./server.sh
 ```
 
 You should see a message such as 'Web Server is available at http://localhost:1313/'.
