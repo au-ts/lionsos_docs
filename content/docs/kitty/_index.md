@@ -17,12 +17,13 @@ system intended to be used for buying snacks in the Trustworthy Systems
 Lab.
 
 {{< hint danger >}}
-**TODO: add picture of case/deployed version**
+**TODO: use a better picture**
 {{< /hint >}}
+<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_case.jpg" alt="Picture of Kitty user inteface and hardware case" width="500"/>
 
 ## Architecture
 
-Below is a diagram of the (simplified) architecutre of the Kitty system that contains
+Below is a diagram of the (simplified) architecture of the Kitty system that contains
 all of the various components involved.
 
 ![Kitty architecture diagram](/kitty_architecture.svg)
