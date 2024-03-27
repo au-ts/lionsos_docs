@@ -2,6 +2,9 @@
 
 This repository holds the source for the documentation website for LionsOS.
 
+If you find any issues with the documentation please file an issue or create
+a pull request.
+
 ## Dependencies
 
 The website is built using the [Hugo static site generator](https://gohugo.io/). To install
@@ -26,7 +29,7 @@ If you are developing the documentation and want to preview your changes, run:
 ./server.sh
 ```
 
-You should see a message such as 'Web Server is available at http://localhost:1313/'.
+You should see a message such as `Web Server is available at http://localhost:1313/`.
 Open the link in your browser to view the documentation, the page will automatically
 reload on any changes.
 
