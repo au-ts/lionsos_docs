@@ -1,5 +1,5 @@
 ---
-weight: 2
+weight: 40
 bookFlatSection: false
 title: "Tutorials"
 ---

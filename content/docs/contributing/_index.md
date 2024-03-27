@@ -1,5 +1,5 @@
 ---
-weight: 2
+weight: 100
 bookFlatSection: false
 title: "Contributing"
 ---

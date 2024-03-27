@@ -1,5 +1,5 @@
 ---
-weight: 3
+weight: 50
 bookFlatSection: false
 title: "Using LionsOS"
 ---
