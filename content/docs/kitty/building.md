@@ -98,8 +98,8 @@ address of this server has to be known at build time.
 
 ```sh
 cd examples/kitty
-# Configuration for the NFS server
-export NFS_SERVER=0.0.0.0 # IP adddress of NFS server
+# Configuration needed by the NFS client
+export NFS_SERVER=0.0.0.0 # IP adddress of NFS server to connect to
 export NFS_DIRECTORY=/path/to/dir # NFS directory to mount
 # Define path to libgcc, where $GCC is the GCC toolchain downloaded above
 export LIBGCC=$(dirname $(realpath $(aarch64-none-elf-gcc --print-file-name libgcc.a)))

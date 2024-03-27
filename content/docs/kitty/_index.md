@@ -27,3 +27,37 @@ Below is a diagram of the (simplified) architecture of the Kitty system that con
 all of the various components involved.
 
 ![Kitty architecture diagram](/kitty_architecture.svg)
+
+## LionsOS components
+
+### Networking
+
+#### Network File System (NFS)
+
+### I<sup>2</sup>C
+
+### Serial sub-system
+
+### Timer
+
+### Linux Virtual Machine
+
+## MicroPython
+
+* a bit about micropython
+* links to docs
+* how it works a bit,
+* why we chose micropython
+
+### Connections with LionsOS
+#### I<sup>2</sup>C
+
+#### Framebuffer
+
+#### Networking
+
+#### File System
+
+## Navigating the codebase
+
+In LionsOS, you will find

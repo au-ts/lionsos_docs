@@ -5,14 +5,19 @@ type: docs
 
 # The Lions Operating System
 
-{{< hint warning >}}
-This website serves as the **draft** documentation for LionsOS. Everything you
-see here is a work-in-progress and is subject to change at any point.
+{{< hint info >}}
+LionsOS is currently at version 0.1.0 and is undergoing active research and
+development. It is not expected for LionsOS to be stable at this time, but it
+is available for others to experiment with. For more info, see [Status & Roadmap](/docs/status_and_roadmap).
 {{< /hint >}}
 
 LionsOS is an operating system framework based on the seL4 microkernel
 with the goal of making the achievements of seL4 accessible. That is,
 to provide performance, security, and reliability.
+
+TODO: add architecture picture
+
+TODO: need more fundamentals explained
 
 It is not a conventional operating system, but contains composable
 components for creating custom operating systems that are specific to
@@ -20,7 +25,7 @@ a particular task.  Components are joined together using the
 [Microkit](https://github.com/seL4/microkit) tool.
 
 The principles on which a LionsOS system is built are laid out fully
-in the [seL4 Device Driver Framework](???) document; but in brief they
+in the [sDDF design document](https://trustworthy.systems/projects/drivers/sddf-design.pdf); but in brief they
 are:
 1. Components are connected by lock-free queues using an efficient
    model-checked signalling mechanism.
@@ -32,8 +37,8 @@ are:
 
 1. Components called
    _virtualisers_ handle multiplexing and control, and conversion
-   between virtual and IO addresses for drivers
-   
+   between virtual and IO addresses for drivers.
+
 1. Information is shared only where necessary, via the queues, or via
    published information pages.
 
@@ -44,7 +49,5 @@ are:
    kernel.
 
 To be successful, many more components are needed.  Pull requests to
-the various repositories are welcome.
-
-Contents
---------
+the various repositories are welcome. See the
+[page on contributing](/docs/contributing) for more details.

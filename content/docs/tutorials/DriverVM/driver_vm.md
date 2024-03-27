@@ -116,7 +116,7 @@ In the device tree for the Odroid C4, you'll notice that devices are
 arranged into a series  buses.  Rather than map each device
 individually, we'll set up regions using 2M  pages where possible. 
 
-```
+```xml
   <memory_region name="bus1" size="0x200_000" phys_addr="0xff600000"
 	page_size = "0x200_000"/>
   <memory_region name="bus2" size="0x400_000" phys_addr="0xff800000"
@@ -130,7 +130,7 @@ There are other devices that need to be passed through individually,
 such as the ethernet.    These are mapped with standard 4k pages as they
 are small regions.
 
-```
+```xml
   <memory_region name="eMMCB" size="0x1000" phys_addr="0xffe05000" />
   <memory_region name="eMMCC" size="0x1000" phys_addr="0xffe07000" />
   <memory_region name="eth" size="0x10000" phys_addr="0xff3f0000" />
@@ -141,7 +141,7 @@ are small regions.
 All these are mapped one-to-one in the virtual machine guest protection
 domain.  Device regions are mapped uncached.
 
-```
+```xml
   <protection_domain name="VMM" priority="10">
     <program_image path="vmm.elf" />
     <map mr="guest_ram" vaddr=GUESTRAMADDR perms="rw" setvar_vaddr="guest_ram_vaddr" />
