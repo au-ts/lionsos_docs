@@ -2,6 +2,7 @@
 title = 'Hardware setup'
 date = 2023-12-12T21:00:47+11:00
 draft = false
+weight = 1
 +++
 
 # Setting up your Odroid-C4 hardware
@@ -16,11 +17,17 @@ Official documentation for the Odroid-C4 is available [here](https://wiki.odroid
 
 ## What you will need
 
+### Required
 | Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
 | ----------- | ----------- | - | - | - |
 | HardKernel Odroid-C4 SBC | | 150 | 1 | 1 |
-| UART to USB converter | | 150 | 1 | 1 |
 | Power Supply | | 150 | 1 | 1 |
+| UART to USB converter | | 150 | 1 | 1 |
+| Female to female pin cables (x3) | | 150 | 1 | 1 |
+
+### Optional
+| Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
+| ----------- | ----------- | - | - | - |
 | NFC card reader | | 150 | 1 | 1 |
 | VU7C touchscreen display | | 150 | 1 | 1 |
 | Ethernet cable | | 150 | 1 | 1 |
@@ -42,30 +49,72 @@ TODO: add notes for connecting power and UART to USB device
 
 TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a picture
 
-### UART to USB converter
+### UART
 
-### PN532 NFC card reader
-
-Below is the NFC card reader that we use. You will want to note two things:
-1. We need the NFC card reader to be in I<sup>2</sup>C mode, which means that the pins on the
-   bottom left need to be in a certain configuration. For I<sup>2</sup>C, pin 1 needs to be set
-   and pin 2 needs to be not set. The image below has the correct setup.
-2. On the left are the pins that will connect to Odroid-C4. If you are using the display, this will
-   connect to the GPIO pins exposed on the back of the display. If you are not using the display,
-   these will connect directly to the GPIO pins on the Odroid-C4.
-
-<img src="/nfc_card_reader.jpeg" alt="PN532 NFC card reader close up" width="300"/>
-
-#### With display
-
-#### Without display
-
-### VU7C touchscreen display
+### Display
 
 The display is fairly easy to connect, at the back you will see a bunch of GPIO inserts which you want
 to align with the GPIO pins on the Odroid-C4.
 
-### Network cable
+You will then want to connect the HDMI bridge, the HDMI port on the display should line up with the
+HDMI port on the Odroid-C4.
+
+### NFC card reader
+
+<img src="/nfc_card_reader.jpeg" alt="PN532 NFC card reader close up" width="300"/>
+
+There are two parts to setting up the card reader:
+1. Setting to I<sup>2</sup>C mode.
+2. Connecting the GND, VCC, SDA, and SCL pins.
+
+#### Setting to I<sup>2</sup>C mode
+
+We need the NFC card reader to be in I<sup>2</sup>C mode, which means that the DiP need to be
+in a certain configuration. For I<sup>2</sup>C, switch 1 needs to be set
+and switch 2 needs to be not set. The image below can be used as reference.
+
+<img src="/nfc_card_reader_dip_switch.jpeg" alt="PN532 NFC card reader DiP switch configuration" width="150"/>
+
+#### Connecting the pins
+
+#### With display
+
+Below is a close-up of the back of the right side of the VU7C display. Highlighted in
+green are the relevant pins that we need to connect to the NFC reader:
+
+{{< columns >}}
+
+<img src="/nfc_connect_display.jpg" alt="PN532 NFC card reader close up" width="300"/>
+
+<--->
+
+| Display pin | NFC card reader pin |
+| ---- | ---- |
+| GND  | GND |
+| P5V0 | VCC |
+| SCL  | SCL |
+| SDA  | SDA |
+
+{{< /columns >}}
+
+#### Without display
+
+{{< columns >}}
+
+<img src="/odroidc4_gpio_pins_nfc.jpg" alt="PN532 NFC card reader close up" width="400"/>
+
+<--->
+
+| GPIO pin | NFC card reader pin |
+| ---- | ---- |
+| 3 (bottom-left) | SDA |
+| 4 (top-left) | VCC |
+| 5 (bottom-right) | SCL |
+| 6 (top-right) | GND |
+
+{{< /columns >}}
+
+### Ethernet
 
 If you want to use the NFS client
 
