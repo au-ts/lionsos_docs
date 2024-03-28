@@ -18,36 +18,41 @@ Official documentation for the Odroid-C4 is available [here](https://wiki.odroid
 ## What you will need
 
 ### Required
-| Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
-| ----------- | ----------- | - | - | - |
-| HardKernel Odroid-C4 SBC | | 150 | 1 | 1 |
-| Power Supply | | 150 | 1 | 1 |
-| UART to USB converter | | 150 | 1 | 1 |
-| Female to female pin cables (x3) | | 150 | 1 | 1 |
+| Hardware                        | Link                                                        |
+|---------------------------------|-------------------------------------------------------------|
+| HardKernel Odroid-C4 SBC        | https://www.hardkernel.com/shop/odroid-c4/                  |
+| Power Supply                    | 12V 2A                                                      |
+|3.3V  TTL-level UART to USB converter | https://www.hardkernel.com/shop/usb-uart-2-module-kit-copy/ |
+| SD card or eMMC | https://www.hardkernel.com/shop/16gb-emmc-module-c4-linux/ |
+
+
 
 ### Optional
-| Hardware | Link | Price (USD) | Price (AUD) | Price (EUR) |
-| ----------- | ----------- | - | - | - |
-| NFC card reader | | 150 | 1 | 1 |
-| VU7C touchscreen display | | 150 | 1 | 1 |
-| Ethernet cable | | 150 | 1 | 1 |
-| Female to female pin cables | | 150 | 1 | 1 |
+| Hardware | Link | 
+| ----------- | ----------- |
+| PN532 NFC card reader | https://www.fruugoaustralia.com/pn532-nfc-rfid-v3-module-near-field-communication-support-and-android-phone-communication/p-228968185-488544821 |
+| VU7C touchscreen display | https://www.hardkernel.com/shop/odroid-vu7c-7inch-1024x600-hdmi-display-with-multi-touch/ |
+| Ethernet cable | |
+
 
 In addition to the Odroid-C4 itself, you will need a couple of pieces before you can boot the system:
 
-* A power supply (TODO add detail)
+* A 12V 2A power supply with barrel connector,  outer (negative)
+  diameter 5.5mm, inner (positive) diameter 2.1mm 
 * A UART to USB adapter (3.3V)
-* A microSD card or eMMC module (TODO does it need to be a specific kind or a specific size? Probably can't be too big)
-
-TODO pictures of setting everything up (UART, power, microSD or eMMC)
+* A microSD card or eMMC module 
 
 ## Connecting everything together
 
-This section will show you how to connect all the hardware pieces you have to your Odroid-C4.
+This section will show you how to connect all the hardware pieces you
+have to your Odroid-C4.
 
 TODO: add notes for connecting power and UART to USB device
 
-TODO: add notes for connecting the NFC module. Specify which GPIO pins + show a picture
+TODO: add notes for connecting the NFC module. Specify which GPIO
+pins + show a picture
+
+TODO: Add link to 3D-printable case
 
 ### UART
 
