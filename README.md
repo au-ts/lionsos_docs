@@ -1,6 +1,6 @@
 # LionsOS documentation
 
-This repository holds the source for the documentation website for LionsOS.
+This repository holds the source for the documentation website for the Lions Operating System.
 
 If you find any issues with the documentation please file an issue or create
 a pull request.
