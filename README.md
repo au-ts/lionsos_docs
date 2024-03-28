@@ -33,6 +33,18 @@ You should see a message such as `Web Server is available at http://localhost:13
 Open the link in your browser to view the documentation, the page will automatically
 reload on any changes.
 
+## Offline version
+
+If you need store an offline version of the documentation, you should be able to do:
+```sh
+git clone https://github.com/au-ts/lionsos_docs
+cd lionsos_docs
+git submodule update --init
+hugo --gc --minify
+```
+
+All the generated files will be in `public/`.
+
 ## Design files 
 
 All diagrams are in SVG format and made in a tool called [Figma](https://figma.com).
