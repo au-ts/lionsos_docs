@@ -44,10 +44,16 @@ all of the various components involved.
 
 ## MicroPython
 
-* a bit about micropython
-* links to docs
+* Micropython is a Python interpreter designed for embedded use.
+  It has a much smaller memory footprint than a standard Python
+  implementation, and does not rely on a full operating system.
+  It includes facilities for interacting directly with hardware; and
+  is relatively straightfdorward to port to a new platform.
+* There is extensive documnetation at https://docs.micropython.org
 * how it works a bit,
-* why we chose micropython
+* We chose micropython as a way to develop business logic quickly for
+  simple embedded systems.  If appropriately configured, it can act as
+  a _shell_ for LionsOS.
 
 ### Connections with LionsOS
 #### I<sup>2</sup>C
