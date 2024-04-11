@@ -38,9 +38,32 @@ all of the various components involved.
 
 ### Serial sub-system
 
+Interaction with the MicroPython REPL is done via a serial connection. We use
+a UART device.
+
 ### Timer
 
 ### Linux Virtual Machine
+
+#### Linux images
+
+There are three images associated with the guest operating system:
+* the kernel
+* the Device Tree Blob (binary format of the Device Tree)
+* the initial RAM disc/root file system
+
+The manufacturers of the Odroid-C4 platform, HardKernel, have upstreamed
+support to mainline Linux.
+
+This means that we have been able to use a standard mainline version of
+Linux to build and run virtual machines on the Odroid-C4. It has the
+necessary platform specific configuration and drivers.
+
+However, for this example system there is a single driver that has not
+been upstreamed. It is a driver for the `lt8619c` device which is the
+HDMI bridge between the VU7C display and Odroid-C4.
+
+#### UIO
 
 ## MicroPython
 
@@ -55,15 +78,50 @@ all of the various components involved.
   simple embedded systems.  If appropriately configured, it can act as
   a _shell_ for LionsOS.
 
+### Porting MicroPython
+
+For this example system, we have not had to modify or patch MicroPython in any
+way, despite MicroPython not having official support for LionsOS. This is
+primarily because MicroPython allows users to add their own ports without changing
+any internal code.
+
+The 
+
+More information about porting can be found [here](https://docs.micropython.org/en/latest/develop/porting.html).
+
 ### Connections with LionsOS
+
 #### I<sup>2</sup>C
 
+The MicroPython [I2C class](https://docs.micropython.org/en/latest/library/machine.I2C.html)
+is used to interact with an I<sup>2</sup>C bus. The MicroPython
+
 #### Framebuffer
+
+In order to have a basic graphical user interface (GUI) we leverage the
+existing graphics driver in Linux in order to draw to a framebuffer.
+
+We do this for two reasons:
+* To show off virtual machines being used in a LionsOS-based system.
+* At this stage, we do not have the capacity to write graphics drivers and
+  our UI is not affected by the overhead of a virtual machine.
+
+The framebuffer and associated configuration is exported via shared memory to
+a client, in this case MicroPython.
+
+MicroPython provides a small [framebuf](https://docs.micropython.org/en/latest/library/framebuf.html)
+module for doing operations on a fixed size buffer (e.g setting a particular pixel to a certain colour).
+Unlike some of the other modules we make use of in our port of MicroPython, `framebuf` does no I/O. For
+this, we have a custom module called `fb` that simply allows us to send a buffer from MicroPython to
+the display via the virtual machine.
+
+This custom module was added following the process on
+[MicroPython's documentation](https://docs.micropython.org/en/latest/develop/porting.html#adding-a-module-to-the-port).
+This module is built and linked at build-time in contrast to extending MicroPython using `.mpy` files. More information
+about extending MicroPython [here](https://docs.micropython.org/en/latest/develop/porting.html#adding-a-module-to-the-port).
 
 #### Networking
 
 #### File System
 
 ## Navigating the codebase
-
-In LionsOS, you will find

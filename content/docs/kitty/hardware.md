@@ -13,7 +13,7 @@ The Odroid-C4 is available for purchase [directly from HardKernel](https://www.h
 
 Official documentation for the Odroid-C4 is available [here](https://wiki.odroid.com/odroid-c4/odroid-c4).
 
-![test](/all_hardware.jpeg)
+![TODO](/all_hardware.jpeg)
 
 ## What you will need
 
@@ -56,6 +56,27 @@ TODO: Add link to 3D-printable case
 
 ### UART
 
+There multiple ways to connect to the UART but in this section we will describe a common and
+easy way which is to use a UART to USB adapter like below:
+
+The connection will look like this:
+
+**Your PC <-> USB <-> UART adapter <-> Pins <-> Odroid-C4**
+
+You will connect the UART adapter to your computer via USB.
+
+TODO
+
+You will then need a program to read the serial connection on your computer such as minicom, picocom
+or a GUI application such as [GTKTerm](https://github.com/Jeija/gtkterm).
+
+For example, to use minicom:
+```sh
+# Note that the path to the USB device of the UART adapter
+# may be different for you
+minicom -D /dev/ttyUSB0 -b 115200
+```
+
 ### Display
 
 The display is fairly easy to connect, at the back you will see a bunch of GPIO inserts which you want
@@ -89,7 +110,7 @@ green are the relevant pins that we need to connect to the NFC reader:
 
 {{< columns >}}
 
-<img src="/nfc_connect_display.jpg" alt="PN532 NFC card reader close up" width="300"/>
+<img src="/nfc_connect_display.jpg" alt="TODO" width="300"/>
 
 <--->
 
@@ -106,7 +127,7 @@ green are the relevant pins that we need to connect to the NFC reader:
 
 {{< columns >}}
 
-<img src="/odroidc4_gpio_pins_nfc.jpg" alt="PN532 NFC card reader close up" width="400"/>
+<img src="/odroidc4_gpio_pins_nfc.jpg" alt="TODO" width="400"/>
 
 <--->
 

@@ -1,16 +1,5 @@
----
-title: "Virtual Machines"
-weight: 1
-# bookFlatSection: false
-# bookToc: true
-# bookHidden: false
-# bookCollapseSection: false
-# bookComments: false
-# bookSearchExclude: false
----
-
-# Virtual machine Library
-The virtual machine library provides the following interfaces:
+# libvmm API
+The virtual machine library (libvmm) provides the following interfaces.
 
 ## `uintptr_t linux_setup_images(uintptr_t ram_start, uintptr_t kernel, size_t kernel_size, uintptr_t dtb_src, uintptr_t dtb_dest, size_t dtb_size, uintptr_t initrd_src, uintptr_t initrd_dest, size_t initrd_size)`
 
@@ -44,7 +33,7 @@ The arguments are:
   `ack_fn` a function to be called when the guest acknowledges the
   interrupt
 
-	`ack_data` a cookie to be passed to the `ack_fn` when called.
+    `ack_data` a cookie to be passed to the `ack_fn` when called.
 
 
 ## `bool virq_inject(size_t vcpu_id, int irq)`

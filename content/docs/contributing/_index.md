@@ -11,18 +11,21 @@ licence.
 
 Key repositories are
 
- 1. https://github.com/au-ts/LionsOS --- the main repository.
- 1. https://github.com/au-ts/sDDF --- the seL4 Device Driver framework
- 1. https://github.com/au-ts/libvmm --- the virtual machine monitor
+ * https://github.com/au-ts/lionsos --- the main repository
+ * https://github.com/au-ts/sddf --- the seL4 Device Driver framework
+ * https://github.com/au-ts/libvmm --- the virtual machine monitor library
     library
- 1. https://github.com/au-ts/lionsOS_docs --- documentation and tutorials
+ * https://github.com/au-ts/lionsos_docs --- the documentation and tutorials that make up this website
+
+Currently, the main LionsOS repository has all the other necessary code repositories
+such as sDDF and libvmm as Git submodules.
 
 To contribute, first get the examples working.  Then generate pull
 requests to the appropriate repository.
 
-# General Guidelines
+## General Guidelines
 
-We use the same conventions as the seL4 project.
+We use the same conventions as the seL4 microkernel which can be found here:
  *  [Style Guide](https://docs.sel4.systems/processes/style-guide.html)
  *  [Git Conventions](https://docs.sel4.systems/processes/git-conventions.html)
  *  [Code of Conduct](https://docs.sel4.systems/processes/conduct.html)
@@ -30,9 +33,17 @@ We use the same conventions as the seL4 project.
 
 Please read and abide by these --- especially the Code of Conduct.
 
-# Areas of contribution
+## Areas of contribution
 
-## Documentation
+### Bugs and feature requests
+
+GitHub is used to track bugs and features.
+
+Please open bug and feature requests in the respective repository that fits
+most with the issue. If you are not sure what repository is best, please
+open an issue on the [LionsOS repository](https://github.com/au-ts/lionsos/issues).
+
+### Documentation
 If you try LionsOS and blog or vlog about it, please tell us via the
 devel@sel4.systems email list.  Noteworthy blogs will be linked from
 our site(s).
@@ -41,17 +52,41 @@ If you find issues (things that are documented wrong, missing
 documentation, or are confusing) raise issues in the appropriate
 repository, and/or generate pull requests to fix the issue.
 That includes pull requests to the
-[Documentation](https://github.com/au-ts/lionsOS_docs) repository.
+[documentation](https://github.com/au-ts/lionsos_docs) repository.
 
-## Drivers and Virtualisers
+### New device drivers and device virtualisers
+
+All drivers and virtualisers are a part of the seL4 Device
+Driver Framework and hence they should be contributed there.
+
+When writing a new driver or virtualiser you will need to be
+familiar with the general design of sDDF as well as the design of
+the device class you are working with. This can be found in the
+[design documentation](https://trustworthy.systems/projects/drivers/sddf-design.pdf).
+
 New drivers and virtualisers are welcomed.  These will generally be
 contributed via pull requests to the
-[sDDF](https://github.com/au-ts/sDDF) repository. 
+[sDDF](https://github.com/au-ts/sddf) repository.
+
+Upstreaming a new *device class* is much more work as it involves a
+signifcant amount of design, evaluation and experimentation. If you
+wish to add a new device class to sDDF please [get in touch](TODO).
 
 As drivers are not of much use on their own, please add in addition to
 the driver, an example that uses it, and CI rules to test it, at least
 to the 'it builds cleanly' stage.  The example can either be in the
 LionsOS examples directory, or in the sDDF examples directory.
+
+### Virtual machines
+
+For creating and managing virtual machines in LionsOS we use libvmm. This
+is a minimal library for allowing users to run a guest OS such as Linux
+in a LionsOS system.
+
+The main area contribution for libvmm is more virtIO devices (also known
+as backends). The [virtIO specification](https://docs.oasis-open.org/virtio/virtio/v1.2/csd01/virtio-v1.2-csd01.html)
+outlines a number of various device classes, some of which we have such as block
+and network.
 
 ## Complete Systems
 The intention is that (eventually) LionsOS systems can be built
@@ -59,7 +94,7 @@ entirely out-of-tree.  If you build an open-source LionsOS-based
 system, please add a link to the documentation by submitting a PR to
 the [LionsOS docs](https://github.com/au-ts/LionsOS_docs) repository.
 
-# Getting Help
+## Getting Help
 LionsOS was built and is supported by a small team at UNSW, Sydney.
 We try to respond to queries on the devel@sel4.systems mailing list
 (sign up at
@@ -67,7 +102,3 @@ https://lists.sel4.systems/postorius/lists/devel.sel4.systems/ ) and
 via the [seL4
 mattermost](https://mattermost.trustworthy.systems/seL4-external) chat
 server.
-
-
-
-

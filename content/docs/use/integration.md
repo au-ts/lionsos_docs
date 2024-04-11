@@ -1,3 +1,9 @@
+---
+weight: 10
+bookFlatSection: false
+title: "Integration"
+---
+
 # Integration
 
 Due to LionsOS being a *component* Operating System, part of the process of developing

@@ -31,7 +31,7 @@ are:
    model-checked signalling mechanism.
 
 1. As far as is practical, operating systems components do a single
-   thing.  Drivers for instance exist solely to convert between a
+   thing. Drivers for instance exist solely to convert between a
    hardware interface and a set of queues to talk to the rest of the
    system.
 
