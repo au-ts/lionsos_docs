@@ -71,11 +71,11 @@ need a different version of seL4; these will give instructions.
 
 LionsOS consists of libraries and components for building complete
 systems.  To get it, clone its [Github
-Repository](https://github.com/au-ts/LionsOS) and then update its
+Repository](https://github.com/au-ts/lionsos) and then update its
 submodules (this is around 1.7Gb):
 ```
-git clone git@github.com:au-ts/LionsOS.git
-cd LionsOS
+git clone git@github.com:au-ts/lionsos.git
+cd lionsos
 git submodule update --init
 ```
 

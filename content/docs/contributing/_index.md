@@ -37,6 +37,10 @@ Please read and abide by these --- especially the Code of Conduct.
 
 ### Bugs and feature requests
 
+If you have issues with building, running or using LionsOS please file
+an issue on [GitHub](https://github.com/au-ts/lionsos) or see the
+[getting help section](#getting-help).
+
 GitHub is used to track bugs and features.
 
 Please open bug and feature requests in the respective repository that fits
