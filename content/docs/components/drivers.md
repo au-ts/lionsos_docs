@@ -12,7 +12,7 @@ weight: 1
 # Device Drivers
 
 All device drivers are in user-space as separate components. This means that they each have their own
-Thread Control Block (TCB) as well as virtual-address space. This design coupled with the guarantess
+Thread Control Block (TCB) as well as virtual-address space. This design coupled with the guarantees
 of seL4 ensure each device driver is isolated.
 
 The drivers used in LionsOS come from the [seL4 Device Driver Framework]().

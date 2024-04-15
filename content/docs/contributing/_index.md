@@ -6,19 +6,18 @@ title: "Contributing"
 
 # Contributing
 
-All the LionsOS code is available on Github under an open-source
+All the LionsOS code is available on GitHub under an open-source
 licence.
 
 Key repositories are
 
- * https://github.com/au-ts/lionsos --- the main repository
- * https://github.com/au-ts/sddf --- the seL4 Device Driver framework
- * https://github.com/au-ts/libvmm --- the virtual machine monitor library
-    library
- * https://github.com/au-ts/lionsos_docs --- the documentation and tutorials that make up this website
+ * The main LionsOS repository --- https://github.com/au-ts/lionsos
+ * seL4 Device Driver Framework --- https://github.com/au-ts/sddf
+ * libvmm (virtual machine monitor library) --- https://github.com/au-ts/libvmm
+ * Documentation site (this website) --- https://github.com/au-ts/lionsos_docs
 
-Currently, the main LionsOS repository has all the other necessary code repositories
-such as sDDF and libvmm as Git submodules.
+Currently, the main LionsOS repository has all the projects it depends on
+(such as sDDF and libvmm) as Git submodules.
 
 To contribute, first get the examples working.  Then generate pull
 requests to the appropriate repository.
@@ -74,7 +73,7 @@ contributed via pull requests to the
 
 Upstreaming a new *device class* is much more work as it involves a
 signifcant amount of design, evaluation and experimentation. If you
-wish to add a new device class to sDDF please [get in touch](TODO).
+wish to add a new device class to sDDF please [get in touch](#getting-help).
 
 As drivers are not of much use on their own, please add in addition to
 the driver, an example that uses it, and CI rules to test it, at least
@@ -101,8 +100,7 @@ the [LionsOS docs](https://github.com/au-ts/LionsOS_docs) repository.
 ## Getting Help
 LionsOS was built and is supported by a small team at UNSW, Sydney.
 We try to respond to queries on the devel@sel4.systems mailing list
-(sign up at
-https://lists.sel4.systems/postorius/lists/devel.sel4.systems/ ) and
+(sign up [here](https://lists.sel4.systems/postorius/lists/devel.sel4.systems/)) and
 via the [seL4
-mattermost](https://mattermost.trustworthy.systems/seL4-external) chat
+Mattermost](https://mattermost.trustworthy.systems/seL4-external) chat
 server.
