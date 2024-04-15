@@ -13,6 +13,9 @@ draft = false
 git clone https://github.com/au-ts/lionsos.git
 cd lionsos
 git submodule update --init
+cd micropython
+git submodule update --init lib/micropython-lib
+cd ..
 ```
 
 ## Dependencies
@@ -74,12 +77,26 @@ tar xf microkit-sdk-dev-7c679ea-macos-x86-64.tar.gz
 There is a choice of toolchains at [ARM Toolchains](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 We're currently using GCC 12.
 
-For Linux, run the following commands:
+{{< tabs "aarch64-toolchain" >}}
+{{< tab "Linux (x64)" >}}
+
 ```sh
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz?rev=a8bbb76353aa44a69ce6b11fd560142d&hash=20124930455F791137DDEA1F0AF79B10' \
     -O arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz
 ```
+{{< /tab >}}
+{{< tab "macOS (ARM64)" >}}
+```sh
+https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf.tar.xz?rev=cc2c1d03bcfe414f82b9d5b30d3a3d0d&hash=FBA1F3807EC2AA946B3170422669D15A
+```
+{{< /tab >}}
+{{< tab "macOS (x64)" >}}
+```sh
+https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf.tar.xz?rev=78193d7740294ebe8dbaa671bb5011b2&hash=1DF8812C4FFB7B78C589E702CFDE4471
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 For MacOSX the URLs are
 https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf.tar.xz?rev=78193d7740294ebe8dbaa671bb5011b2&hash=1DF8812C4FFB7B78C589E702CFDE4471
@@ -98,15 +115,16 @@ address of this server has to be known at build time.
 
 ```sh
 cd examples/kitty
-# Configuration needed by the NFS client
-export NFS_SERVER=0.0.0.0 # IP adddress of NFS server to connect to
-export NFS_DIRECTORY=/path/to/dir # NFS directory to mount
-# Define path to libgcc, where $GCC is the GCC toolchain downloaded above
-export LIBGCC=$(dirname $(realpath $(aarch64-none-elf-gcc --print-file-name libgcc.a)))
-make MICROKIT_SDK=/path/to/sdk -j$(nproc)
+# IP adddress of NFS server to connect to
+export NFS_SERVER=0.0.0.0
+# NFS directory to mount
+export NFS_DIRECTORY=/path/to/dir
+export MICROKIT_SDK=/path/to/sdk
+# Compile the system
+make
 ```
 
 If you need to build a release version of the system:
 ```sh
-make MICROKIT_SDK=/path/to/sdk MICROKIT_CONFIG=release -j$(nproc)
+make MICROKIT_CONFIG=release
 ```
