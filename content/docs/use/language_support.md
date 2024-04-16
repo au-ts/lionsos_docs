@@ -35,6 +35,9 @@ We do not necessarily *want* to use the full extent of a libc (in particular slo
 `read` and `write`) but understand that large or legacy clients cannot reasonably change to use
 the asynchronous APIs that we mostly use.
 
+Our [current plan](https://github.com/au-ts/lionsos/issues/48) is to create a libc for LionsOS-based
+system using the [picolibc](https://github.com/picolibc/picolibc) project.
+
 ## Pancake
 
 Pancake is a new programming language, developed at Trusworthy Systems in
