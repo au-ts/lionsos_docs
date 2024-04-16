@@ -22,6 +22,15 @@ All the work relating to GDB support can be found [here](https://github.com/au-t
 While it is functional and can be used to debug applications, it is yet to be properly integrated with
 LionsOS. However, getting it integrated is a priority for us.
 
+## Features
+
+We implement most of the GDB remote protocol, which means that you can:
+* Read/write register state
+* Read/write memory of a PD
+* Single step execute
+* Set breakpoints
+* Set watchpoints
+
 ## Architecture
 
 Below is the general setup of a LionsOS system using GDB. There is a GDB Protection Domain (PD) that is
@@ -30,5 +39,8 @@ responsible for controlling the execution of the buggy PDs depending on the GDB 
 The host (e.g developer's machine) that is running the GDB client connects to the GDB PD via some transport
 such as a serial or network device. For failicating this I/O, we use the standard interfaces that are used
 for all other [I/O in LionsOS](/docs/components/drivers).
+
+We have GDB over serial and are working on GDB over the network. In theory it would be possible to use other
+device classes but at this time we have no plans to do so.
 
 <img src="/gdb_arch.svg" alt="Architecture of a system using GDB support" />
