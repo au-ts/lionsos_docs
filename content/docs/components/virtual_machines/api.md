@@ -1,3 +1,9 @@
+---
+weight: 30
+title: "Reference system (Kitty)"
+bookHidden: true
+---
+
 # libvmm API
 The virtual machine library (libvmm) provides the following interfaces.
 

@@ -11,6 +11,7 @@ unsafe = true
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'dark'
   BookSection = 'docs'
+  BookRepo = 'https://github.com/au-ts/lionsos_docs'
 
 [menu]
 [[menu.after]]

@@ -8,16 +8,18 @@ type: docs
 {{< hint info >}}
 LionsOS is currently at version 0.1.0 and is undergoing active research and
 development. It is not expected for LionsOS to be stable at this time, but it
-is available for others to experiment with. For more info, see [Status & Roadmap](/docs/status_and_roadmap).
+is available for others to experiment with. For more info, see
+[Status & Roadmap](/docs/status_and_roadmap).
 {{< /hint >}}
 
 LionsOS is an operating system framework based on the seL4 microkernel
 with the goal of making the achievements of seL4 accessible. That is,
 to provide performance, security, and reliability.
 
-TODO: add architecture picture
+<!-- TODO: add architecture picture -->
+<img src="/lionsos_arch.svg" alt="Architecture of a LionsOS-based system" />
 
-TODO: need more fundamentals explained
+<!-- TODO: need more fundamentals explained -->
 
 It is not a conventional operating system, but contains composable
 components for creating custom operating systems that are specific to

@@ -29,10 +29,11 @@ sudo apt update && sudo apt install make clang lld device-tree-compiler unzip gi
 {{< /tab >}}
 {{< tab "macOS" >}}
 ```sh
-brew install make llvm dtc
-# Add LLD to PATH
-echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
-source ~/.zshrc
+# Make sure that you add the LLVM bin directory to your path.
+# For example:
+# echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
+# Homebrew will print out the correct path to add
+brew install make dtc llvm
 ```
 {{< /tab >}}
 {{< tab "Arch" >}}

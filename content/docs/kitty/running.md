@@ -4,6 +4,8 @@ date = 2023-12-12T21:00:47+11:00
 draft = false
 +++
 
+# Running
+
 The Kitty has several Mac-address endpoints, that need to be known by
 several components.  It expects to be run while connected to a network
 with a DHCP server that will hand out IPv4 addresses corresponding to
@@ -21,14 +23,13 @@ time.  Its MicroPython interpreter can import python modules from the
 NFS filesystem.  The NFSv3 server has to be set up to export to
 whatever IP address the NFS component is given by DHCP.
 
-
-# Running
+## Boot
 
 When first booting up the system you will see the MicroPython REPL
 prompt on the serial console:
 ```sh
 MP|INFO: initialising!
-MicroPython v1.20.0-328-g01c758e26 on 2023-12-19; Odroid-C4 with Cortex A55
+MicroPython v1.22.2 on 2023-12-19; Odroid-C4 with Cortex A55
 >>>
 ```
 
@@ -58,6 +59,6 @@ hello world
 []
 ```
 
-## Accessing the network
+<!-- ## Accessing the network
 
-TODO
+TODO -->

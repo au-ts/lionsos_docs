@@ -28,31 +28,18 @@ Official documentation for the Odroid-C4 is available [here](https://wiki.odroid
 
 
 ### Optional
-| Hardware | Link | 
+| Hardware | Link |
 | ----------- | ----------- |
 | PN532 NFC card reader | https://www.fruugoaustralia.com/pn532-nfc-rfid-v3-module-near-field-communication-support-and-android-phone-communication/p-228968185-488544821 |
 | VU7C touchscreen display | https://www.hardkernel.com/shop/odroid-vu7c-7inch-1024x600-hdmi-display-with-multi-touch/ |
 | Ethernet cable | |
-
-
-In addition to the Odroid-C4 itself, you will need a couple of pieces before you can boot the system:
-
-* A 12V 2A power supply with barrel connector,  outer (negative)
-  diameter 5.5mm, inner (positive) diameter 2.1mm 
-* A UART to USB adapter (3.3V)
-* A microSD card or eMMC module 
 
 ## Connecting everything together
 
 This section will show you how to connect all the hardware pieces you
 have to your Odroid-C4.
 
-TODO: add notes for connecting power and UART to USB device
-
-TODO: add notes for connecting the NFC module. Specify which GPIO
-pins + show a picture
-
-TODO: Add link to 3D-printable case
+<!-- TODO: Add link to 3D-printable case -->
 
 ### UART
 
@@ -61,11 +48,9 @@ easy way which is to use a UART to USB adapter like below:
 
 The connection will look like this:
 
-**Your PC <-> USB <-> UART adapter <-> Pins <-> Odroid-C4**
+**Your PC <-> USB <-> UART adapter <-> Odroid-C4**
 
 You will connect the UART adapter to your computer via USB.
-
-TODO
 
 You will then need a program to read the serial connection on your computer such as minicom, picocom
 or a GUI application such as [GTKTerm](https://github.com/Jeija/gtkterm).
@@ -110,7 +95,7 @@ green are the relevant pins that we need to connect to the NFC reader:
 
 {{< columns >}}
 
-<img src="/nfc_connect_display.jpg" alt="TODO" width="300"/>
+<img src="/nfc_connect_display.jpg" alt="" width="300"/>
 
 <--->
 
@@ -142,20 +127,21 @@ green are the relevant pins that we need to connect to the NFC reader:
 
 ### Ethernet
 
-If you want to use the NFS client
+If you want to use the NFS client, you will need to give the Odroid-C4 access to
+your NFS server via ethernet.
 
 ## Flashing U-Boot
 
 Follow the instructions [here](https://github.com/Ivan-Velickovic/flash_uboot_odroidc4).
 
-TODO, reproduce the instructions from https://github.com/Ivan-Velickovic/flash_uboot_odroidc4
+<!-- TODO, reproduce the instructions from https://github.com/Ivan-Velickovic/flash_uboot_odroidc4
 here.
 
 TODO, have instructions for building custom U-Boot in case the reader needs some specific
 config option in U-Boot that isn't in the default one.
 
 TODO, an option is to have a tar.gz that contains the image *as well as* the `uboot.env` file
-so that they don't have to configure U-Boot manually.
+so that they don't have to configure U-Boot manually. -->
 
 ## Configuring U-Boot
 
@@ -173,7 +159,7 @@ into U-Boot:
   on the Odroid-C4 via the network.
 2. Using a storage device such as an SD card or eMMC.
 
-TODO, only tested these instructions via SD card, not via eMMC yet.
+<!-- TODO, only tested these instructions via SD card, not via eMMC yet. -->
 
 ### Option 1 - Booting via the network
 
@@ -194,7 +180,7 @@ Saving Environment to MMC... Writing to MMC(0)... OK
 ```
 
 Note that the `<SYSTEM IMAGE PATH>` will be the path to the system image in your TFTP server.
-(TODO isn't is relative to some root directory of the TFTP server?)
+<!-- (TODO isn't is relative to some root directory of the TFTP server?) -->
 
 From here, you will need to run `saveenv` in order to have the change persist across reboots.
 

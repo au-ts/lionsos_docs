@@ -16,9 +16,7 @@ The system we have built is called the Kitty, it is a Point-of-Sale (PoS)
 system intended to be used for buying snacks in the Trustworthy Systems
 Lab.
 
-{{< hint danger >}}
-**TODO: use a better picture**
-{{< /hint >}}
+<!-- TODO: use a better picture -->
 <img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_case.jpg" alt="Picture of Kitty user inteface and hardware case" width="500"/>
 
 ## Architecture
@@ -26,15 +24,25 @@ Lab.
 Below is a diagram of the (simplified) architecture of the Kitty system that contains
 all of the various components involved.
 
+There is a client program which is inside the Kitty source code (`client/kitty.py`) that
+when imported in the MicroPython REPL will do three things:
+* scan for card taps
+* send network requests and receive responses with a server to register card taps
+* draw the UI based on the current state (e.g if someone has successfully tapped)
+
 ![Kitty architecture diagram](/kitty_architecture.svg)
 
 ## LionsOS components
 
-### Networking
+<!-- ### Networking -->
 
-#### Network File System (NFS)
+<!-- #### Network File System (NFS) -->
 
 ### I<sup>2</sup>C
+
+For accessing the card reader, we have a I<sup>2</sup>C driver that is behind
+a virtualiser which clients communicate with to claim busses and send requests
+and receive responses.
 
 ### Serial sub-system
 
@@ -42,6 +50,10 @@ Interaction with the MicroPython REPL is done via a serial connection. We use
 a UART device.
 
 ### Timer
+
+In order for functionality such as `time.sleep()` in MicroPython to work we need
+to use a timer device. It is also required for each IP stack used for the NFS client
+and MicroPython networking to deliver a regular timeout notification.
 
 ### Linux Virtual Machine
 
@@ -65,6 +77,9 @@ HDMI bridge between the VU7C display and Odroid-C4.
 
 #### UIO
 
+When we get framebuffer data from the client prgoram (in this case
+MicroPython), 
+
 ## MicroPython
 
 * Micropython is a Python interpreter designed for embedded use.
@@ -85,7 +100,9 @@ way, despite MicroPython not having official support for LionsOS. This is
 primarily because MicroPython allows users to add their own ports without changing
 any internal code.
 
-The 
+MicroPython is very configurable, the minimum functionality MicroPython needs to
+run a way to output and receive on a serial device. From there, everything added
+like timing, networking and file systems is up to what you need from MicroPython.
 
 More information about porting can be found [here](https://docs.micropython.org/en/latest/develop/porting.html).
 
@@ -94,7 +111,7 @@ More information about porting can be found [here](https://docs.micropython.org/
 #### I<sup>2</sup>C
 
 The MicroPython [I2C class](https://docs.micropython.org/en/latest/library/machine.I2C.html)
-is used to interact with an I<sup>2</sup>C bus. The MicroPython
+is used to interact with an I<sup>2</sup>C bus.
 
 #### Framebuffer
 
@@ -120,8 +137,8 @@ This custom module was added following the process on
 This module is built and linked at build-time in contrast to extending MicroPython using `.mpy` files. More information
 about extending MicroPython [here](https://docs.micropython.org/en/latest/develop/porting.html#adding-a-module-to-the-port).
 
-#### Networking
+<!-- #### Networking -->
 
-#### File System
+<!-- #### File System -->
 
-## Navigating the codebase
+<!-- ## Navigating the codebase -->
