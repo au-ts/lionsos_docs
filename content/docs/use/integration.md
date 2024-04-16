@@ -38,3 +38,23 @@ as auto-generating the SDF file itself based on some higher-level specification.
 
 ## Build System
 
+While LionsOS has less run-time complexity compared to traditional OSes, some of that complexity is
+shifted to build-time which means more reliance and expectation of the build system.
+
+### Make
+
+The primary way we have been building LionsOS systems (such as the [reference system](/docs/kitty)) is
+via GNU Make. We are in the process of creating small Makefile snippets for each component (e.g a driver
+or a static library like libvmm) which can then be called from a top-level Makefile that you have created.
+This should decrease the amount of time needed to get something up and running.
+
+### Zig
+
+We are also experimenting with the [Zig build system](https://ziglang.org/learn/build-system/). The Zig
+project provides a portable C/C++ toolchain as well as a build system. Zig build 'scripts' are written in the
+Zig programming language that call APIs for creating on build steps. Despite not having any Zig programs in
+LionsOS, we can still leverage the build system. In fact, due to having the build system as well as the
+toolchain in a single executable, building via Zig actually has less dependencies than other build systems.
+
+We do not have Zig build scripts for all the parts of LionsOS yet, but
+[libvmm has some examples](https://github.com/au-ts/libvmm/tree/main/examples/simple#building-with-zig).
