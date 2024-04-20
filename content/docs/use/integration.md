@@ -7,7 +7,7 @@ title: "Integration"
 # Integration
 
 Due to LionsOS being a *component* Operating System, part of the process of developing
-on top of LionsOS involves picking and integaring the various components and sub-systems
+on top of LionsOS involves picking and integrating the various components and sub-systems
 that you want to be part of your final system.
 
 This brings up a problem of how, as the system designer, do you put everything together
@@ -31,9 +31,9 @@ These limitations have benefits but also present problems such as:
   clients a virtualiser component has).
 
 We have encountered these problems in our [Kitty reference system](/docs/kitty) and are working on
-improved/extra tooling in order to make the development of a LionsOS system signficantly easier.
+improved/extra tooling in order to make the development of a LionsOS system significantly easier.
 
-This invovles a way of auto-generating information about the system for components to consume as well
+This involves a way of auto-generating information about the system for components to consume as well
 as auto-generating the SDF file itself based on some higher-level specification.
 
 ## Build System
