@@ -37,7 +37,7 @@ Below is the general setup of a LionsOS system using GDB. There is a GDB Protect
 responsible for controlling the execution of the buggy PDs depending on the GDB commands given by the user.
 
 The host (e.g developer's machine) that is running the GDB client connects to the GDB PD via some transport
-such as a serial or network device. For failicating this I/O, we use the standard interfaces that are used
+such as a serial or network device. For facilitating this I/O, we use the standard interfaces that are used
 for all other [I/O in LionsOS](/docs/components/drivers).
 
 We have GDB over serial and are working on GDB over the network. In theory it would be possible to use other
