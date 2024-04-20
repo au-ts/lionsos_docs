@@ -23,7 +23,7 @@ all written in C code (with some MicroPython scripts).
 ## C
 
 C will most likely remain as the the most common language of LionsOS components due to it being
-ammenable to formal verification and because our current verification tooling is intended for C.
+amenable to formal verification and because our current verification tooling is intended for C.
 
 ### Standard Library (libc)
 
@@ -40,7 +40,7 @@ system using the [picolibc](https://github.com/picolibc/picolibc) project.
 
 ## Pancake
 
-Pancake is a new programming language, developed at Trusworthy Systems in
+Pancake is a new programming language, developed at Trustworthy Systems in
 co-ordination with other researchers, with the goal of creating verified
 device drivers.
 
@@ -51,6 +51,6 @@ You can find out more about the Pancake project [here](https://trustworthy.syste
 
 ## Rust
 
-Rust is becoming popular within the embedded space and with the recent [first-class Rust support to seL4]
-(https://github.com/seL4/rust-sel4) we have started to experiment with Rust but do not yet have any
+Rust is becoming popular within the embedded space and with the recent [first-class Rust support for seL4](https://github.com/seL4/rust-sel4)
+we have started to experiment with Rust but do not yet have any
 components written in Rust. This is something on our roadmap though.
