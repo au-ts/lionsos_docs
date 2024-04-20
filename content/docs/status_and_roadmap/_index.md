@@ -8,7 +8,7 @@ title: "Status & Roadmap"
 
 The first release version, 0.1.0, is now live.  It has a number of known
 issues (see the GitHub issue trackers in the relevant repositories)
-but is we do have example systems that use it such as the [reference
+but we do have example systems that use it such as the [reference
 system](/docs/kitty) and [tutorials](/docs/tutorials).
 
 Over the next couple months, our general priorities are:
