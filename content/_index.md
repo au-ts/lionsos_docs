@@ -46,7 +46,7 @@ are:
 
 1. The system is static: it does not adapt to changing hardware, and
    does not load components at runtime.  There is a mechanism for
-   swapping componens _of the same type_ at runtime, to implement
+   swapping components _of the same type_ at runtime, to implement
    policy changes, or to reboot a virtual machine with a new Linux
    kernel.
 
