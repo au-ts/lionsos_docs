@@ -6,7 +6,7 @@ title: "Profiling"
 
 # Profiling
 
-In order to determine and analysis the performance of a LionsOS system, we need a systematic
+In order to determine and analyse the performance of a LionsOS system, we need a systematic
 way of recording where CPU time is spent.
 
 We achieve this with a statistical profiler, which means that we take regular samples of the
@@ -17,7 +17,7 @@ Domain (PD) is using.
 
 All the work relating to profiling support can be found [here](https://github.com/au-ts/sel4_profiler).
 
-While it is functional and receiving internal use to profiler our systems, it is yet to be properly
+While it is functional and receiving internal use to profile our systems, it is yet to be properly
 integrated with LionsOS. However, getting it integrated is a priority for us.
 
 ## Architecture
