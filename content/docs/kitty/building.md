@@ -7,15 +7,10 @@ draft = false
 # Building the Kitty system
 
 ## Acquire source code
-(this takes around 1.7Gb to download)
 
 ```sh
 git clone https://github.com/au-ts/lionsos.git
 cd lionsos
-git submodule update --init
-cd micropython
-git submodule update --init lib/micropython-lib
-cd ..
 ```
 
 ## Dependencies
@@ -108,6 +103,7 @@ directory to your `PATH`.
 ```sh
 export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
 ```
+
 ## Compiling the Kitty system
 
 The Kitty system, when running, takes files from an NFSv3 server.  The
@@ -120,6 +116,8 @@ export NFS_SERVER=0.0.0.0
 # NFS directory to mount
 export NFS_DIRECTORY=/path/to/dir
 export MICROKIT_SDK=/path/to/sdk
+# Initialise submodules (this will require an internet connection)
+make submodules
 # Compile the system
 make
 ```
