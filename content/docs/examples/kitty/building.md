@@ -101,10 +101,46 @@ export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf/bi
 {{< /tab >}}
 {{< /tabs >}}
 
+Then add the `.../arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin`
+directory to your `PATH`.
+```sh
+export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
+```
+
+### QEMU (optional)
+You will only require QEMU if you wish to run the Kitty system on it. We have tested with V8 and above.
+
+{{< tabs "QEMU" >}}
+{{< tab "Linux (x64)" >}}
+
+```sh
+wget https://download.qemu.org/qemu-9.0.0.tar.xz
+tar xvJf qemu-9.0.0.tar.xz
+cd qemu-9.0.0
+./configure
+make -j$(nproc) && sudo make install
+```
+{{< /tab >}}
+{{< tab "macOS (ARM64)" >}}
+Brew:
+```sh
+brew install qemu
+```
+MacPorts:
+```sh
+sudo port install qemu
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
 ## Compiling the Kitty system
 
 The Kitty system, when running, takes files from an NFSv3 server.  The
 address of this server has to be known at build time.
+
+{{< tabs "Compiling" >}}
+{{< tab "OdroidC4" >}}
 
 ```sh
 cd examples/kitty
@@ -118,6 +154,23 @@ make submodules
 # Compile the system
 make
 ```
+{{< /tab >}}
+{{< tab "QEMU" >}}
+```sh
+cd examples/kitty
+# IP adddress of NFS server to connect to
+export NFS_SERVER=0.0.0.0
+# NFS directory to mount
+export NFS_DIRECTORY=/path/to/dir
+export MICROKIT_SDK=/path/to/sdk
+export MICROKIT_BOARD=qemu_arm_virt
+# Initialise submodules (this will require an internet connection)
+make submodules
+# Compile the system
+make qemu
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 If you need to build a release version of the system:
 ```sh
