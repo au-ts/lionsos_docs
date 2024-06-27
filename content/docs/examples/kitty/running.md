@@ -33,7 +33,54 @@ MicroPython v1.22.2 on 2023-12-19; Odroid-C4 with Cortex A55
 >>>
 ```
 
-## Accessing the file system
+## Running the Kitty client
+
+The Kitty client is responbile for drawing the user-interface
+to the display as well as communicating with a server to send
+any card IDs it processes.
+
+Before running the Kitty client script, you must first start the
+server. It is a fairly simple script that can be started with the
+following commands:
+```sh
+# From the lionsos/examples/kitty directory
+python3 server/server.py
+```
+
+You will need to supply the IP address of the machine that you are running the
+server on to the Kitty program.
+
+If you are running the Kitty example on QEMU, and running the server on your host
+machine, then use the IP address `10.0.2.2`. This is the gateway IP address from QEMU
+to your host machine.
+
+Below is an example of running the Kitty example:
+
+```python
+>>> import kitty
+
+Welcome to Kitty!
+Usage: kitty.run(String IP_ADDRESS).
+        IP_ADDRESS: The IP address of the kitty server.
+>>> kitty.run("10.0.2.2")
+```
+
+After executing the `kitty.run` command, you should see output on the display like so:
+<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_display.png" alt="Picture of Kitty user inteface" width="700"/>
+
+## Using MicroPython
+
+Upon boot, the system starts a MicroPython REPL that will allow you
+to interact with various components connected to it.
+
+Below are some examples of what you can do within the REPL.
+
+<!-- ### Setting a timeout
+
+```python
+```
+ -->
+### Accessing the file system
 
 Below is an example of accessing the file system mounted via NFS.
 
@@ -59,6 +106,6 @@ hello world
 []
 ```
 
-<!-- ## Accessing the network
+<!-- ### Accessing the network
 
 TODO -->
