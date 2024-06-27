@@ -1,10 +1,9 @@
 +++
 title = 'Building'
-date = 2023-12-12T21:00:47+11:00
 draft = false
 +++
 
-# Building the Kitty system
+# Building
 
 ## Acquire source code
 
@@ -19,7 +18,7 @@ Run the following commands depending on your machine:
 {{< tabs "dependencies" >}}
 {{< tab "Ubuntu/Debian" >}}
 ```sh
-sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git
+sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git qemu-system-arm
 ```
 {{< /tab >}}
 {{< tab "macOS" >}}
@@ -28,12 +27,12 @@ sudo apt update && sudo apt install make clang lld device-tree-compiler unzip gi
 # For example:
 # echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
 # Homebrew will print out the correct path to add
-brew install make dtc llvm
+brew install make dtc llvm qemu
 ```
 {{< /tab >}}
 {{< tab "Arch" >}}
 ```sh
-sudo pacman -Sy make clang lld dtc
+sudo pacman -Sy make clang lld dtc qemu
 ```
 {{< /tab >}}
 {{< tab "Nix" >}}
@@ -101,15 +100,16 @@ export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf/bi
 {{< /tab >}}
 {{< /tabs >}}
 
-## Compiling the Kitty system
+## Compiling the webserver system
 
-The Kitty system, when running, takes files from an NFSv3 server.  The
-address of this server has to be known at build time.
+For the web server to load the website's files, it expected to be
+connected to an NFSv3 server. As part of the build process, you will
+need to supply the IP address of this server.
 
 {{< tabs "build" >}}
 {{< tab "QEMU virt AArch64" >}}
 ```sh
-cd examples/kitty
+cd examples/webserver
 export MICROKIT_SDK=/path/to/sdk
 # Platform to target
 export MICROKIT_BOARD=qemu_virt_aarch64
@@ -117,6 +117,8 @@ export MICROKIT_BOARD=qemu_virt_aarch64
 export NFS_SERVER=<ip address of NFS server>
 # NFS export to mount
 export NFS_DIRECTORY=/path/to/dir
+# Location of website's static files on NFS export
+export WEBSITE_DIR=/path/to/website
 # Initialise submodules
 make submodules
 # Compile the system
@@ -125,7 +127,7 @@ make
 {{< /tab >}}
 {{< tab "Odroid-C4" >}}
 ```sh
-cd examples/kitty
+cd examples/webserver
 export MICROKIT_SDK=/path/to/sdk
 # Platform to target
 export MICROKIT_BOARD=odroidc4
@@ -133,6 +135,8 @@ export MICROKIT_BOARD=odroidc4
 export NFS_SERVER=<ip address of NFS server>
 # NFS export to mount
 export NFS_DIRECTORY=/path/to/dir
+# Location of website's static files on NFS export
+export WEBSITE_DIR=/path/to/website
 # Initialise submodules
 make submodules
 # Compile the system
@@ -145,3 +149,10 @@ If you need to build a release version of the system:
 ```sh
 make MICROKIT_CONFIG=release
 ```
+
+## Next steps
+
+If you have successfully compiled the system, there should be a file
+`build/webserver.img`.
+
+You can now move to [running the system](../running).
