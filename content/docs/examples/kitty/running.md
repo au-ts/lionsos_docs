@@ -62,3 +62,18 @@ hello world
 <!-- ## Accessing the network
 
 TODO -->
+
+## Runnning the Kitty example
+```python
+>>> import kitty
+Orientation: Horizontal. Reversal: False. Width: 1920. Height: 1080.
+Start row = 0 col = 0
+
+Welcome to Kitty!
+Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE).
+       IP_ADDRESS: The IP address of the kitty server.
+       I2C_ENABLE: True if I2C device is enabled, False otherwise.
+       NFS_ENABLE: True if NFS is available, False otherwise.
+       NOTE: If running on QEMU, use IP_ADDRESS "10.0.2.2".
+>>> kitty.run(IP_ADDRESS, True/False, True/False)
+```
