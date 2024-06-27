@@ -62,3 +62,38 @@ hello world
 <!-- ## Accessing the network
 
 TODO -->
+
+## Runnning the Kitty example
+First, you must run the Kitty server script. This script can be
+found in `examples/kitty/server`. To run please do the following:
+```sh
+cd examples/kitty/server
+python3 server.py
+```
+You will need to supply the IP address of the machine that you are running the
+server on to the Kitty program. If you are running the Kitty example on QEMU, and
+running the server on your host machine, then use the ip address `10.0.2.2`.
+This is the gateway IP address from QEMU to your host machine.
+
+If you disable I2C, then input of card numbers is done via
+serial, and you will have a prompt to `Please enter card number`. If you are
+running this example on a QEMU system, please disable I2C.
+
+If you disable NFS, then the Kitty example won't be able to get the cat image
+to display, otherwise it will be functional without.
+
+Below is an example of running the Kitty example.
+
+```python
+>>> import kitty
+Orientation: Horizontal. Reversal: False. Width: 1920. Height: 1080.
+Start row = 0 col = 0
+
+Welcome to Kitty!
+Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE).
+       IP_ADDRESS: The IP address of the kitty server.
+       I2C_ENABLE: True if I2C device is enabled, False otherwise.
+       NFS_ENABLE: True if NFS is available, False otherwise.
+       NOTE: If running on QEMU, use IP_ADDRESS "10.0.2.2".
+>>> kitty.run("10.0.2.2", False, True)
+```
