@@ -43,7 +43,7 @@ live.
 
 The webserver system runs on the HardKernel Odroid-C4, just like the
 Kitty system. See [Kitty/Hardware setup]({{< relref
-"/docs/kitty/hardware" >}}).
+"/docs/examples/kitty/hardware" >}}).
 
 ## Building
 
