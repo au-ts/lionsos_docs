@@ -75,10 +75,11 @@ However, for this example system there is a single driver that has not
 been upstreamed. It is a driver for the `lt8619c` device which is the
 HDMI bridge between the VU7C display and Odroid-C4.
 
-#### UIO
+<!-- #### UIO
 
 When we get framebuffer data from the client prgoram (in this case
 MicroPython), 
+-->
 
 ## MicroPython
 
