@@ -118,6 +118,8 @@ export NFS_DIRECTORY=/path/to/dir
 export MICROKIT_SDK=/path/to/sdk
 # Initialise submodules (this will require an internet connection)
 make submodules
+# Download images for the Linux VM
+make images
 # Compile the system
 make
 ```
