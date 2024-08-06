@@ -93,20 +93,20 @@ Run the following commands depending on your machine:
 {{< tab "Linux (x64)" >}}
 
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-linux-x86-64.tar.gz
-tar xf microkit-sdk-dev-7c679ea-linux-x86-64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/1.4.0/microkit-sdk-1.4.0-linux-x86-64.tar.gz
+tar xf microkit-sdk-1.4.0-linux-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (ARM64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-macos-aarch64.tar.gz
-tar xf microkit-sdk-dev-7c679ea-macos-aarch64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/1.4.0/microkit-sdk-1.4.0-macos-aarch64.tar.gz
+tar xf microkit-sdk-1.4.0-macos-aarch64.tar.gz
 ```
 {{< /tab >}}
 {{< tab "macOS (x64)" >}}
 ```sh
-wget https://trustworthy.systems/Downloads/microkit/microkit-sdk-dev-7c679ea-macos-x86-64.tar.gz
-tar xf microkit-sdk-dev-7c679ea-macos-x86-64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/1.4.0/microkit-sdk-1.4.0-macos-x86_64.tar.gz
+tar xf microkit-sdk-1.4.0-macos-x86_64.tar.gz
 ```
 {{< /tab >}}
 {{< /tabs >}}
