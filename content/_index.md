@@ -6,7 +6,7 @@ type: docs
 # The Lions Operating System
 
 {{< hint info >}}
-LionsOS is currently at version 0.1.0 and is undergoing active research and
+LionsOS is currently at version 0.2.0 and is undergoing active research and
 development. It is not expected for LionsOS to be stable at this time, but it
 is available for others to experiment with. For more info, see
 [Status & Roadmap](/docs/status_and_roadmap).
