@@ -1,22 +1,22 @@
 ---
 weight: 30
 bookFlatSection: false
-title: "Webserver"
+title: "Web server"
 ---
 
-# Webserver system
+# Web server system
 
 The LionsOS project contains an example system that acts as a
-webserver for static websites. This tutorial aims to explain how the
+webserver for static websites. This page aims to explain how the
 webserver system works as well as show you how to build and run it.
 
 ## Architecture
 
-Below is a diagram of the (simplified) architecture of the Kitty
+Below is a diagram of the (simplified) architecture of the web server
 system that contains all of the various components involved.
 
 <div style="background-color: white; display: inline-block;">
-    <img src="/webserver.svg" alt="Webserver architecture diagram" />
+    <img src="/webserver.svg" alt="Web server architecture diagram" />
 </div>
 
 There is a singular user protection domain running: a LionsOS port of
@@ -43,7 +43,9 @@ live.
 
 The webserver system runs on the HardKernel Odroid-C4, just like the
 Kitty system. See [Kitty/Hardware setup]({{< relref
-"/docs/examples/kitty/hardware" >}}).
+"/docs/examples/kitty/hardware" >}}), although to run the web server
+you only need an ethernet and serial connection to the Odroid-C4, the
+other hardware (such as card reader and touchscreen) is not necessary.
 
 ## Building
 
@@ -79,7 +81,7 @@ sudo pacman -Sy make clang lld dtc
 {{< /tab >}}
 {{< tab "Nix" >}}
 ```sh
-nix-shell --pure examples/kitty
+nix-shell examples/kitty
 ```
 {{< /tab >}}
 {{< /tabs >}}
@@ -177,7 +179,7 @@ several components.  It expects to be run while connected to a network
 with a DHCP server that will hand out IPv4 addresses corresponding to
 each of the Mac addresses.
 
-As at the time of writing, the MAC addresses are:
+At the time of writing, the MAC addresses are:
 
 | Component   |      MAC       |
 |:------------|:--------------:|
@@ -201,4 +203,4 @@ Starting async server on 0.0.0.0:80...
 
 At this point, if you visit 172.16.1.32:80, you should be served the
 contents of your website. Of course, the actual IP address will depend
-on your DHCP server.
+on your network.
