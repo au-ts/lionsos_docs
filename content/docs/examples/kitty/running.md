@@ -63,7 +63,7 @@ hello world
 
 TODO -->
 
-## Runnning the Kitty example
+## Running the Kitty example
 First, you must run the Kitty server script. This script can be
 found in `examples/kitty/server`. To run please do the following:
 ```sh
@@ -74,6 +74,10 @@ You will need to supply the IP address of the machine that you are running the
 server on to the Kitty program. If you are running the Kitty example on QEMU, and
 running the server on your host machine, then use the ip address `10.0.2.2`.
 This is the gateway IP address from QEMU to your host machine.
+
+The display width and height is different for both the OdroidC4 and QEMU examples.
+OdroidC4 - Height: 1920 Width: 1080
+QEMU - Height: 1100 Width: 900
 
 If you disable I2C, then input of card numbers is done via
 serial, and you will have a prompt to `Please enter card number`. If you are
@@ -89,11 +93,11 @@ Below is an example of running the Kitty example.
 Orientation: Horizontal. Reversal: False. Width: 1920. Height: 1080.
 Start row = 0 col = 0
 
-Welcome to Kitty!
-Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE).
-       IP_ADDRESS: The IP address of the kitty server.
-       I2C_ENABLE: True if I2C device is enabled, False otherwise.
-       NFS_ENABLE: True if NFS is available, False otherwise.
-       NOTE: If running on QEMU, use IP_ADDRESS "10.0.2.2".
->>> kitty.run("10.0.2.2", False, True)
+Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE, int DISPLAY_WIDTH, int DISPLAY_HEIGHT).
+        IP_ADDRESS: The IP address of the kitty server.
+        I2C_ENABLE: True if I2C device is enabled, False otherwise.
+        NFS_ENABLE: True if NFS is available, False otherwise.
+        DISPLAY_WIDTH: The width of the display.
+        DISPLAY_HEIGHT: The height of the display.
+>>> kitty.run("10.0.2.2", False, True, 1920, 1080)
 ```
