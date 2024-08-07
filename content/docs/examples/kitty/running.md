@@ -94,9 +94,8 @@ Below is an example of running the Kitty example.
 
 ```python
 >>> import kitty
-Orientation: Horizontal. Reversal: False. Width: 1920. Height: 1080.
-Start row = 0 col = 0
 
+Welcome to Kitty!
 Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE, int DISPLAY_WIDTH, int DISPLAY_HEIGHT).
         IP_ADDRESS: The IP address of the kitty server.
         I2C_ENABLE: True if I2C device is enabled, False otherwise.
