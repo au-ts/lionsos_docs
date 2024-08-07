@@ -72,7 +72,7 @@ python3 server.py
 ```
 You will need to supply the IP address of the machine that you are running the
 server on to the Kitty program. If you are running the Kitty example on QEMU, and
-running the server on your host machine, then use the ip address `10.0.2.2`.
+running the server on your host machine, then use the IP address `10.0.2.2`.
 This is the gateway IP address from QEMU to your host machine.
 
 The display width and height is different for both the OdroidC4 and QEMU examples.
