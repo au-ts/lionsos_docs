@@ -98,7 +98,7 @@ tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 {{< /tab >}}
 {{< /tabs >}}
 
-Then add the `.../arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin`
+Then add the `arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin`
 directory to your `PATH`.
 ```sh
 export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
