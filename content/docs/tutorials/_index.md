@@ -14,7 +14,7 @@ This section describes how to do that.  It assumes a Debian-like host
 (Debian, Ubuntu, Mint, etc).  If you have instructions for a RedHat
 derived build system (RedHat, Fedora, CentOS etc), Suse, or ArchLinux,
 please generate a pull request against
-https://github.com/au-ts/lionsos-docs
+https://github.com/au-ts/lionsos_docs.
 
 ## ToolChain
 You need a toolchain for your target platform.  LionsOS is for
