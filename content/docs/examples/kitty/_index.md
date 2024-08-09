@@ -1,6 +1,6 @@
 ---
 weight: 30
-bookFlatSection: false
+bookCollapseSection: true
 title: "Reference system (Kitty)"
 ---
 
@@ -10,14 +10,20 @@ Since LionsOS is trying to be a fundamentally different operating system,
 we need to teach people how to properly use it.
 
 The purpose of this reference system is to show off a real, deployable
-system using all of the components that LionsOS provides.
+system using a wide range of the components that LionsOS provides.
+
+<!-- TODO: use a better picture -->
+<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_case.jpg" alt="Picture of Kitty user inteface and hardware case" width="500"/>
 
 The system we have built is called the Kitty, it is a Point-of-Sale (PoS)
 system intended to be used for buying snacks in the Trustworthy Systems
 Lab.
 
-<!-- TODO: use a better picture -->
-<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_case.jpg" alt="Picture of Kitty user inteface and hardware case" width="500"/>
+This page describes the system's architecture and details about how it works,
+if you are interested in building and running it see the pages on:
+* [Hardware setup](hardware.md)
+* [Building](building.md)
+* [Running](running.md)
 
 ## Architecture
 
