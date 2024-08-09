@@ -1,10 +1,14 @@
 ---
 weight: 30
-bookFlatSection: false
+bookToC: false
 title: "0.2.0"
 ---
 
-## 0.2.0 release notes
+# 0.2.0
+
+You can find the tag and associated downloads on [GitHub](https://github.com/au-ts/lionsos/releases/tag/0.2.0).
+
+## Release notes
 
 * Move to Microkit 1.4.0.
     * Previously a development version of Microkit was used, now we use
