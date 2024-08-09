@@ -1,5 +1,5 @@
 ---
 weight: 100
-bookFlatSection: false
-title: "Releases"
+title: "Release Notes"
+bookCollapseSection: true
 ---
