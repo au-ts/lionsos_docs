@@ -2,7 +2,7 @@
 
 set -e
 
-mkdir ~/.ssh
+mkdir -p ~/.ssh
 
 cat >> ~/.ssh/known_hosts <<\EOF
 login.trustworthy.systems ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD111xPT6mKt1s+wJvXIGwUXaebbM/B1GE7ztMUgKBqySbO/5AXXFUr/xflvSluH3lYG5tTpGwPYbJyHOmnJGLY=
@@ -20,5 +20,4 @@ Host ts
 
 EOF
 
-eval $(ssh-agent)
-ssh-add -q - <<< "${DEPLOY_SSH_KEY}"
+echo "${DEPLOY_SSH_KEY}" > ~/.ssh/id_ed25519
