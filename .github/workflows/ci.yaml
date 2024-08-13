@@ -40,11 +40,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: lionsos_docs
+          path: lionsos_docs
       - name: Setup SSH key
         run: ./ci/setup_ssh_key.sh
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       - name: Deploy
         run: |
+          ls -l
           file lionsos_docs
           scp -v -i ~/.ssh/id_ed25519 -J ts -r lionsos_docs/ lions_web_updater@lions-www.keg.cse.unsw.edu.au:/var/www/html
