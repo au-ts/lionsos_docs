@@ -46,4 +46,4 @@ jobs:
         env:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       - name: Deploy
-        run: scp -J lions_web_updater@login.trustworthy.systems -r lionsos_docs/ lions_web_updater@lions-www.keg.cse.unsw.edu.au:/var/www/html
+        run: scp -i ~/.ssh/id_ed25519 -J lions_web_updater@login.trustworthy.systems -r lionsos_docs/ lions_web_updater@lions-www.keg.cse.unsw.edu.au:/var/www/html

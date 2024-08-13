@@ -18,6 +18,7 @@ cat >> ~/.ssh/config <<EOF
 Host ts
   Hostname login.trustworthy.systems
   User lions_web_updater
+  IdentityFile ~/.ssh/id_ed25519
 
 EOF
 
