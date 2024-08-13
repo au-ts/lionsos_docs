@@ -46,5 +46,5 @@ jobs:
           DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
       - name: Deploy
         run: |
-          tar xf lionsos_docs.tar
+          file lionsos_docs
           scp -v -i ~/.ssh/id_ed25519 -J ts -r lionsos_docs/ lions_web_updater@lions-www.keg.cse.unsw.edu.au:/var/www/html
