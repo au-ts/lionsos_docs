@@ -80,6 +80,7 @@ We're currently using GCC 12.
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz?rev=a8bbb76353aa44a69ce6b11fd560142d&hash=20124930455F791137DDEA1F0AF79B10' \
     -O arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
+export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf/bin:$PATH
 ```
 {{< /tab >}}
 {{< tab "macOS (ARM64)" >}}
@@ -87,6 +88,7 @@ tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf.tar.xz?rev=cc2c1d03bcfe414f82b9d5b30d3a3d0d&hash=FBA1F3807EC2AA946B3170422669D15A' \
     -O arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
+export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf/bin:$PATH
 ```
 {{< /tab >}}
 {{< tab "macOS (x64)" >}}
@@ -94,15 +96,10 @@ tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf.tar.xz?rev=78193d7740294ebe8dbaa671bb5011b2&hash=1DF8812C4FFB7B78C589E702CFDE4471' \
     -O arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
+export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf/bin:$PATH
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
-Then add the `arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin`
-directory to your `PATH`.
-```sh
-export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
-```
 
 ## Compiling the Kitty system
 
