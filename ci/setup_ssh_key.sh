@@ -21,3 +21,4 @@ Host ts
 EOF
 
 echo "${DEPLOY_SSH_KEY}" > ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519
