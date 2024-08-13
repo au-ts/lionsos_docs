@@ -38,7 +38,7 @@ sudo pacman -Sy make clang lld dtc
 {{< /tab >}}
 {{< tab "Nix" >}}
 ```sh
-nix-shell examples/kitty
+nix-shell
 ```
 {{< /tab >}}
 {{< /tabs >}}

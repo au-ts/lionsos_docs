@@ -39,14 +39,18 @@ filesystem interface and provides to a client access to a network
 filesystem (NFSv3). This is where the static website's files will
 live.
 
-## Hardware setup
+## Supported platforms
 
-The webserver system runs on the HardKernel Odroid-C4, just like the
+The system works on the following platforms:
+* QEMU virt AArch64
+* HardKernel Odroid-C4
+
+<!-- The webserver system runs on the HardKernel Odroid-C4, just like the
 Kitty system. See [Kitty/Hardware setup]({{< relref
 "/docs/examples/kitty/hardware" >}}), although to run the web server
 you only need an ethernet and serial connection to the Odroid-C4, the
 other hardware (such as card reader and touchscreen) is not necessary.
-
+ -->
 ## Building
 
 ### Acquire source code
@@ -62,7 +66,7 @@ Run the following commands depending on your machine:
 {{< tabs "dependencies" >}}
 {{< tab "Ubuntu/Debian" >}}
 ```sh
-sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git
+sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git qemu-system-arm
 ```
 {{< /tab >}}
 {{< tab "macOS" >}}
@@ -71,17 +75,17 @@ sudo apt update && sudo apt install make clang lld device-tree-compiler unzip gi
 # For example:
 # echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
 # Homebrew will print out the correct path to add
-brew install make dtc llvm
+brew install make dtc llvm qemu
 ```
 {{< /tab >}}
 {{< tab "Arch" >}}
 ```sh
-sudo pacman -Sy make clang lld dtc
+sudo pacman -Sy make clang lld dtc qemu
 ```
 {{< /tab >}}
 {{< tab "Nix" >}}
 ```sh
-nix-shell examples/kitty
+nix-shell
 ```
 {{< /tab >}}
 {{< /tabs >}}
@@ -149,23 +153,48 @@ export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
 
 ### Compiling the webserver system
 
-The Kitty system, when running, takes files from an NFSv3 server.  The
-address of this server has to be known at build time.
+For the web server to load the website's files, it expected to be
+connected to an NFSv3 server. As part of the build process, you will
+need to supply the IP address of this server.
 
+{{< tabs "build" >}}
+{{< tab "QEMU virt AArch64" >}}
 ```sh
 cd examples/webserver
 export MICROKIT_SDK=/path/to/sdk
+# Platform to target
+export MICROKTI_BOARD=qemu_virt_aarch64
 # IP adddress of NFS server to connect to
-export NFS_SERVER=0.0.0.0
+export NFS_SERVER=<ip address of NFS server>
 # NFS export to mount
 export NFS_DIRECTORY=/path/to/dir
 # Location of website's static files on NFS export
-export WEBSITE_DIR=path/to/website
-# Initialise submodules (this will require an internet connection)
+export WEBSITE_DIR=/path/to/website
+# Initialise submodules
 make submodules
 # Compile the system
 make
 ```
+{{< /tab >}}
+{{< tab "Odroid-C4" >}}
+```sh
+cd examples/webserver
+export MICROKIT_SDK=/path/to/sdk
+# Platform to target
+export MICROKTI_BOARD=odroidc4
+# IP adddress of NFS server to connect to
+export NFS_SERVER=<ip address of NFS server>
+# NFS export to mount
+export NFS_DIRECTORY=/path/to/dir
+# Location of website's static files on NFS export
+export WEBSITE_DIR=/path/to/website
+# Initialise submodules
+make submodules
+# Compile the system
+make
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 If you need to build a release version of the system:
 ```sh
@@ -173,6 +202,8 @@ make MICROKIT_CONFIG=release
 ```
 
 ## Running
+
+If you are running on QEMU, skip this section and go straight to [booting](#booting).
 
 The webserver has several Mac-address endpoints, that need to be known by
 several components.  It expects to be run while connected to a network
@@ -191,7 +222,7 @@ time.  Its MicroPython interpreter can import python modules from the
 NFS filesystem.  The NFSv3 server has to be set up to export to
 whatever IP address the NFS component is given by DHCP.
 
-### Boot
+### Booting
 
 When first booting up the system, if everything works correctly, you
 should see something like the following on the serial console:
@@ -200,6 +231,18 @@ should see something like the following on the serial console:
 micropython: mpnetworkport.c:135:netif_status_callback: DHCP request finished, IP address for netif e0 is: 172.16.1.32
 Starting async server on 0.0.0.0:80...
 ```
+
+#### QEMU
+
+The IP address listed when DHCP finishes is relative to QEMU's internal network,
+and is not want we want to connect to.
+
+For connecting outside of QEMU (e.g in your browser), you want to instead go to
+port 5555 of localhost (e.g `localhost:5555` in your browser).
+
+All traffic from port 5555 is routed to port 80 of the webserver program.
+
+#### Hardware
 
 At this point, if you visit 172.16.1.32:80, you should be served the
 contents of your website. Of course, the actual IP address will depend
