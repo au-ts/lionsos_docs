@@ -1,4 +1,4 @@
-#!/bin/ssh
+#!/bin/sh
 
 cat >> ~/.ssh/config <<EOF
 Host ts
