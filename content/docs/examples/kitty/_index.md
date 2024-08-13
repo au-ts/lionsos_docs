@@ -63,6 +63,11 @@ and MicroPython networking to deliver a regular timeout notification.
 
 ### Linux Virtual Machine
 
+In order to have graphics, we use the graphics driver already in Linux and export
+a framebuffer to the Kitty client so that it can draw directly to the display.
+
+This way we do not have to write a fairly complex graphics driver ourselves.
+
 #### Linux images
 
 There are three images associated with the guest operating system:
