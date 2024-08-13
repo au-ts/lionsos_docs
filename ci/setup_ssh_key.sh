@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -e
+
+mkdir ~/.ssh
+
 cat >> ~/.ssh/config <<EOF
 Host ts
   Hostname login.trustworthy.systems
