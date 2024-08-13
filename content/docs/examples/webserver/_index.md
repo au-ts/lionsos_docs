@@ -105,8 +105,8 @@ tar xf microkit-sdk-1.4.0-macos-aarch64.tar.gz
 {{< /tab >}}
 {{< tab "macOS (x64)" >}}
 ```sh
-wget https://github.com/seL4/microkit/releases/download/1.4.0/microkit-sdk-1.4.0-macos-x86_64.tar.gz
-tar xf microkit-sdk-1.4.0-macos-x86_64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/1.4.0/microkit-sdk-1.4.0-macos-x86-64.tar.gz
+tar xf microkit-sdk-1.4.0-macos-x86-64.tar.gz
 ```
 {{< /tab >}}
 {{< /tabs >}}
