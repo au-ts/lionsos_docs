@@ -89,15 +89,17 @@ MicroPython),
 
 ## MicroPython
 
-* Micropython is a Python interpreter designed for embedded use.
-  It has a much smaller memory footprint than a standard Python
-  implementation, and does not rely on a full operating system.
-  It includes facilities for interacting directly with hardware; and
-  is relatively straightfdorward to port to a new platform.
-* There is extensive documentation at https://docs.micropython.org
-* We chose micropython as a way to develop business logic quickly for
-  simple embedded systems.  If appropriately configured, it can act as
-  a _shell_ for LionsOS.
+MicroPython is a Python interpreter designed for embedded use.
+It has a much smaller memory footprint than a standard Python
+implementation, and does not rely on a full operating system.
+It includes facilities for interacting directly with hardware; and
+is relatively straight-forward to port to a new environment.
+
+We chose micropython as a way to develop business logic quickly for
+simple embedded systems. If appropriately configured, it can act as
+a _shell_ for LionsOS.
+
+The official documentation can be found at https://docs.micropython.org.
 
 ### Porting MicroPython
 
