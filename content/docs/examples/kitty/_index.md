@@ -21,9 +21,9 @@ Lab.
 
 This page describes the system's architecture and details about how it works,
 if you are interested in building and running it see the pages on:
-* [Hardware setup](hardware.md)
-* [Building](building.md)
-* [Running](running.md)
+* [Hardware setup](./hardware)
+* [Building](./building)
+* [Running](./running)
 
 ## Architecture
 
