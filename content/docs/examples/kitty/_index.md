@@ -94,8 +94,7 @@ MicroPython),
   implementation, and does not rely on a full operating system.
   It includes facilities for interacting directly with hardware; and
   is relatively straightfdorward to port to a new platform.
-* There is extensive documnetation at https://docs.micropython.org
-* how it works a bit,
+* There is extensive documentation at https://docs.micropython.org
 * We chose micropython as a way to develop business logic quickly for
   simple embedded systems.  If appropriately configured, it can act as
   a _shell_ for LionsOS.
