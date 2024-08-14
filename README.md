@@ -27,8 +27,8 @@ brew install hugo
 
 Each page is written using Markdown and can be found in `content/docs/`.
 
-If you are not familiar with Hugo Book, please see the [documentation]
-(https://github.com/alex-shpak/hugo-book) and
+If you are not familiar with Hugo Book, please see the
+[documentation](https://github.com/alex-shpak/hugo-book) and
 [example website](https://hugo-book-demo.netlify.app/docs/example/table-of-contents/with-toc/)
 to learn more.
 
