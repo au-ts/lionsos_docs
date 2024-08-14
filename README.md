@@ -10,8 +10,7 @@ The website is built using the [Hugo static site generator](https://gohugo.io/) 
 
 ## Dependencies
 
-. To install
-Hugo follow the instructions below for your environment.
+To install Hugo follow the instructions below for your environment.
 
 On Ubuntu/Debian:
 ```sh
@@ -53,7 +52,7 @@ hugo --gc --minify
 
 All the generated files will be in `public/`.
 
-## Design files 
+## Design files
 
 All diagrams are in SVG format and made in a tool called [Figma](https://figma.com).
 
