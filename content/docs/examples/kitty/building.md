@@ -145,3 +145,10 @@ If you need to build a release version of the system:
 ```sh
 make MICROKIT_CONFIG=release
 ```
+
+## Next steps
+
+If you have successfully compiled the system, there should be a file
+`build/kitty.img`.
+
+You can now move to [running the system](../running).
