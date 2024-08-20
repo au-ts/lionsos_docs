@@ -101,12 +101,6 @@ export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf/bi
 {{< /tab >}}
 {{< /tabs >}}
 
-Then add the `.../arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin`
-directory to your `PATH`.
-```sh
-export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-aarch64-none-elf/bin:$PATH
-```
-
 ### QEMU (optional)
 You will only require QEMU if you wish to run the Kitty system on it. We have tested with V8 and above.
 
