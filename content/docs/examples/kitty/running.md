@@ -66,7 +66,7 @@ Usage: kitty.run(String IP_ADDRESS).
 ```
 
 After executing the `kitty.run` command, you should see output on the display like so:
-<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_display.png" alt="Picture of Kitty user inteface" width="700"/>
+<img style="display: block; margin-left: auto; margin-right: auto" src="/kitty_display.png" alt="Picture of Kitty user interface" width="700"/>
 
 ## Using MicroPython
 
