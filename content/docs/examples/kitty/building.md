@@ -143,6 +143,7 @@ export NFS_SERVER=0.0.0.0
 # NFS directory to mount
 export NFS_DIRECTORY=/path/to/dir
 export MICROKIT_SDK=/path/to/sdk
+export MICROKIT_BOARD=odroidc4
 # Initialise submodules
 make submodules
 # Compile the system
@@ -157,7 +158,7 @@ export NFS_SERVER=0.0.0.0
 # NFS directory to mount
 export NFS_DIRECTORY=/path/to/dir
 export MICROKIT_SDK=/path/to/sdk
-export MICROKIT_BOARD=qemu_arm_virt
+export MICROKIT_BOARD=qemu_virt_aarch64
 # Initialise submodules (this will require an internet connection)
 make submodules
 # Compile the system
