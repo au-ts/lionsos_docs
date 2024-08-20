@@ -75,21 +75,6 @@ server on to the Kitty program. If you are running the Kitty example on QEMU, an
 running the server on your host machine, then use the IP address `10.0.2.2`.
 This is the gateway IP address from QEMU to your host machine.
 
-The display width and height is different for both the OdroidC4 and QEMU examples.
-Please use the following values when running the Kitty example:
-
-| BOARD       |  HEIGHT |  WIDTH  |
-|:------------|:-------:|:-------:|
-| OdroidC4    |  1920   |  1080   |
-| QEMU        |  1100   |  900    |
-
-If you disable I2C, then input of card numbers is done via
-serial, and you will have a prompt to `Please enter card number`. If you are
-running this example on a QEMU system, please disable I2C.
-
-If you disable NFS, then the Kitty example won't be able to get the cat image
-to display, otherwise it will be functional without.
-
 Below is an example of running the Kitty example.
 
 ```python
