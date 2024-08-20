@@ -81,11 +81,7 @@ Below is an example of running the Kitty example.
 >>> import kitty
 
 Welcome to Kitty!
-Usage: kitty.run(String IP_ADDRESS, bool I2C_ENABLE, bool NFS_ENABLE, int DISPLAY_WIDTH, int DISPLAY_HEIGHT).
+Usage: kitty.run(String IP_ADDRESS).
         IP_ADDRESS: The IP address of the kitty server.
-        I2C_ENABLE: True if I2C device is enabled, False otherwise.
-        NFS_ENABLE: True if NFS is available, False otherwise.
-        DISPLAY_WIDTH: The width of the display.
-        DISPLAY_HEIGHT: The height of the display.
->>> kitty.run("10.0.2.2", False, True, 1920, 1080)
+>>> kitty.run("10.0.2.2")
 ```
