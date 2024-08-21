@@ -19,7 +19,7 @@ Run the following commands depending on your machine:
 {{< tabs "dependencies" >}}
 {{< tab "Ubuntu/Debian" >}}
 ```sh
-sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git
+sudo apt update && sudo apt install make clang lld device-tree-compiler unzip git qemu-system-arm
 ```
 {{< /tab >}}
 {{< tab "macOS" >}}
@@ -28,7 +28,7 @@ sudo apt update && sudo apt install make clang lld device-tree-compiler unzip gi
 # For example:
 # echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
 # Homebrew will print out the correct path to add
-brew install make dtc llvm
+brew install make dtc llvm qemu
 ```
 {{< /tab >}}
 {{< tab "Arch" >}}

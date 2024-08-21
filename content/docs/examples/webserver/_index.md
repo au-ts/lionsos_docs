@@ -22,7 +22,8 @@ The system works on the following platforms:
 * HardKernel Odroid-C4
 
 If you are going to use the Odroid-C4 platform, please see the section
-on [hardware setup](../kitty/hardware).
+on [hardware setup](../kitty/hardware). You do not need all the hardware
+parts listed, only the ones necessay for a serial and ethernet connection.
 
 ## Architecture
 
