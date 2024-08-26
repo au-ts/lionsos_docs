@@ -10,6 +10,8 @@ You can find the tag and associated downloads on [GitHub](https://github.com/au-
 
 ## Release notes
 
+<div style="width: 75%">
+
 * Move to Microkit 1.4.0.
     * Previously a development version of Microkit was used, now we use
       an official release for everything.
@@ -35,3 +37,5 @@ You can find the tag and associated downloads on [GitHub](https://github.com/au-
   has been rewritten. This was necessary in order to have the repository size not be
   in the dozens/hundreds of megabytes.
     * Examples now fetch the images as part of the build system.
+
+</div>
