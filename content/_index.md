@@ -12,7 +12,7 @@ is available for others to experiment with. For more info, see
 [Status & Roadmap](/docs/status_and_roadmap).
 {{< /hint >}}
 
-LionsOS is an operating system framework based on the seL4 microkernel
+LionsOS is an operating system based on the seL4 microkernel
 with the goal of making the achievements of seL4 accessible. That is,
 to provide performance, security, and reliability.
 
