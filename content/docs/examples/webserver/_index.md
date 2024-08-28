@@ -13,7 +13,8 @@ webserver system works as well as show you how to build and run it.
 This page describes the system's architecture and details about how it works,
 if you are interested in building and running it see the pages on:
 * [Building](./building)
-* [Running](./running)
+* [Running on QEMU](./running_qemu)
+* [Running on hardware](./running_hardware)
 
 ## Supported platforms
 
