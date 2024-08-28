@@ -1,6 +1,7 @@
 +++
 title = 'Building'
 draft = false
+weight = 10
 +++
 
 # Building
@@ -119,8 +120,6 @@ export NFS_SERVER=<ip address of NFS server>
 export NFS_DIRECTORY=/path/to/dir
 # Location of website's static files on NFS export
 export WEBSITE_DIR=/path/to/website
-# Initialise submodules
-make submodules
 # Compile the system
 make
 ```
@@ -137,8 +136,6 @@ export NFS_SERVER=<ip address of NFS server>
 export NFS_DIRECTORY=/path/to/dir
 # Location of website's static files on NFS export
 export WEBSITE_DIR=/path/to/website
-# Initialise submodules
-make submodules
 # Compile the system
 make
 ```
