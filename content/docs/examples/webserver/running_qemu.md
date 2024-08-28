@@ -6,9 +6,7 @@ weight = 20
 
 ## Running on QEMU
 
-### Booting
-
-To start QEMU, run in the same place you compiled the system:
+To start QEMU, run the following command in the same place you compiled the system:
 ```sh
 make qemu
 ```
