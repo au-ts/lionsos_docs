@@ -19,7 +19,7 @@ Run the following commands depending on your machine:
 {{< tabs "dependencies" >}}
 {{< tab "Ubuntu/Debian" >}}
 ```sh
-sudo apt update && sudo apt install make cmake clang lld device-tree-compiler unzip git qemu-system-arm
+sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compiler unzip git qemu-system-arm
 ```
 {{< /tab >}}
 {{< tab "macOS" >}}
