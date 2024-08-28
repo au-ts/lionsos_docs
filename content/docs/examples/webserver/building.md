@@ -152,4 +152,5 @@ make MICROKIT_CONFIG=release
 If you have successfully compiled the system, there should be a file
 `build/webserver.img`.
 
-You can now move to [running the system](../running).
+You can now move to [running the system on QEMU](../running_qemu) or
+[running the system on hardware](../running_hardware).
