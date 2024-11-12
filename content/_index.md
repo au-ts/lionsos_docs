@@ -14,9 +14,12 @@ is available for others to experiment with. For more info, see
 [Status & Roadmap](/docs/status_and_roadmap).
 {{< /hint >}}
 
-LionsOS is an operating system based on the seL4 microkernel
+LionsOS is an operating system based on the [seL4 microkernel](https://sel4.systems)
 with the goal of making the achievements of seL4 accessible. That is,
 to provide performance, security, and reliability.
+
+LionsOS is developed by the [Trustworthy Systems](https://trustworthy.systems) research
+group at [UNSW Sydney](https://unsw.edu.au) in Australia.
 
 <!-- TODO: add architecture picture -->
 <img src="/lionsos_arch.svg" alt="Architecture of a LionsOS-based system" />
