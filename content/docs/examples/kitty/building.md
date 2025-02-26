@@ -16,13 +16,13 @@ cd lionsos
 ## Dependencies
 
 Run the following commands depending on your machine:
-{{< tabs "dependencies" >}}
-{{< tab "Ubuntu/Debian" >}}
+{{% tabs "dependencies" %}}
+{{% tab "Ubuntu/Debian" %}}
 ```sh
 sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compiler unzip git qemu-system-arm
 ```
-{{< /tab >}}
-{{< tab "macOS" >}}
+{{% /tab %}}
+{{% tab "macOS" %}}
 ```sh
 # Make sure that you add the LLVM bin directory to your path.
 # For example:
@@ -30,51 +30,51 @@ sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compil
 # Homebrew will print out the correct path to add
 brew install make dtc llvm qemu
 ```
-{{< /tab >}}
-{{< tab "Arch" >}}
+{{% /tab %}}
+{{% tab "Arch" %}}
 ```sh
 sudo pacman -Sy make clang lld dtc
 ```
-{{< /tab >}}
-{{< tab "Nix" >}}
+{{% /tab %}}
+{{% tab "Nix" %}}
 ```sh
 nix-shell
 ```
-{{< /tab >}}
-{{< /tabs >}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ### Acquire the Microkit SDK
 
 Run the following commands depending on your machine:
-{{< tabs "microkit-sdk" >}}
-{{< tab "Linux (x64)" >}}
+{{% tabs "microkit-sdk" %}}
+{{% tab "Linux (x64)" %}}
 
 ```sh
 wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-linux-x86-64.tar.gz
 tar xf microkit-sdk-1.4.1-linux-x86-64.tar.gz
 ```
-{{< /tab >}}
-{{< tab "macOS (ARM64)" >}}
+{{% /tab %}}
+{{% tab "macOS (ARM64)" %}}
 ```sh
 wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-macos-aarch64.tar.gz
 tar xf microkit-sdk-1.4.1-macos-aarch64.tar.gz
 ```
-{{< /tab >}}
-{{< tab "macOS (x64)" >}}
+{{% /tab %}}
+{{% tab "macOS (x64)" %}}
 ```sh
 wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-macos-x86-64.tar.gz
 tar xf microkit-sdk-1.4.1-macos-x86-64.tar.gz
 ```
-{{< /tab >}}
-{{< /tabs >}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ### Acquire the AArch64 toolchain
 
 There is a choice of toolchains at [ARM Toolchains](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 We're currently using GCC 12.
 
-{{< tabs "aarch64-toolchain" >}}
-{{< tab "Linux (x64)" >}}
+{{% tabs "aarch64-toolchain" %}}
+{{% tab "Linux (x64)" %}}
 
 ```sh
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf.tar.xz?rev=a8bbb76353aa44a69ce6b11fd560142d&hash=20124930455F791137DDEA1F0AF79B10' \
@@ -82,32 +82,32 @@ wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf/bin:$PATH
 ```
-{{< /tab >}}
-{{< tab "macOS (ARM64)" >}}
+{{% /tab %}}
+{{% tab "macOS (ARM64)" %}}
 ```sh
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf.tar.xz?rev=cc2c1d03bcfe414f82b9d5b30d3a3d0d&hash=FBA1F3807EC2AA946B3170422669D15A' \
     -O arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-arm64-aarch64-none-elf/bin:$PATH
 ```
-{{< /tab >}}
-{{< tab "macOS (x64)" >}}
+{{% /tab %}}
+{{% tab "macOS (x64)" %}}
 ```sh
 wget 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf.tar.xz?rev=78193d7740294ebe8dbaa671bb5011b2&hash=1DF8812C4FFB7B78C589E702CFDE4471' \
     -O arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 tar xf arm-gnu-toolchain-12.3.rel1-aarch64-none-elf.tar.xz
 export PATH=$(pwd)/arm-gnu-toolchain-12.3.rel1-darwin-x86_64-aarch64-none-elf/bin:$PATH
 ```
-{{< /tab >}}
-{{< /tabs >}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Compiling the Kitty system
 
 The Kitty system, when running, takes files from an NFSv3 server.  The
 address of this server has to be known at build time.
 
-{{< tabs "build" >}}
-{{< tab "QEMU virt AArch64" >}}
+{{% tabs "build" %}}
+{{% tab "QEMU virt AArch64" %}}
 ```sh
 cd examples/kitty
 export MICROKIT_SDK=/path/to/sdk
@@ -120,8 +120,8 @@ export NFS_DIRECTORY=/path/to/dir
 # Compile the system
 make
 ```
-{{< /tab >}}
-{{< tab "Odroid-C4" >}}
+{{% /tab %}}
+{{% tab "Odroid-C4" %}}
 ```sh
 cd examples/kitty
 export MICROKIT_SDK=/path/to/sdk
@@ -134,8 +134,8 @@ export NFS_DIRECTORY=/path/to/dir
 # Compile the system
 make
 ```
-{{< /tab >}}
-{{< /tabs >}}
+{{% /tab %}}
+{{% /tabs %}}
 
 If you need to build a release version of the system:
 ```sh
