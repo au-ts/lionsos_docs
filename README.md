@@ -22,6 +22,11 @@ On macOS with [Homebrew](https://brew.sh/):
 brew install hugo
 ```
 
+On Nix;
+```sh
+nix develop
+```
+
 ## Developing
 
 Each page is written using Markdown and can be found in `content/docs/`.
