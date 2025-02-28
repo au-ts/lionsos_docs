@@ -58,9 +58,9 @@ of the box and there may be some porting necessary, see their
 
 Pancake is a new programming language, developed at Trustworthy Systems in
 co-ordination with other researchers, with the goal of creating verified
-device drivers.
+device drivers. It is a low-level systems langauge, with a similar syntax to C.
 
-Pancake, is not mature yet but is receiving internal use for writing
+Pancake is not yet mature but is receiving internal use for writing
 and formally verifying drivers.
 
 You can find out more about the Pancake project
