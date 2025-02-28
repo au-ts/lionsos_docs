@@ -38,6 +38,21 @@ the asynchronous APIs that we mostly use.
 Our [current plan](https://github.com/au-ts/lionsos/issues/48) is to create a libc for LionsOS-based
 system using the [picolibc](https://github.com/picolibc/picolibc) project.
 
+## MicroPython
+
+For ease of experimentation and certain client components, we make use of the
+[MicroPython](https://github.com/micropython/micropython) interpreter to allow
+Python scripts to run on LionsOS. MicroPython is a slimmed down version of
+Python, intended for embedded use cases.
+
+Our current support for MicroPython allows serial, networking, I<sup>2</sup>C, and
+file system access. MicroPython can be used either as a REPL or as an interpeter for
+a specific script upon boot.
+
+It should be noted that not all Python programs will work with MicroPython out
+of the box and there may be some porting necessary, see their
+[website for details on compatibilty](https://docs.micropython.org/en/latest/genrst/index.html).
+
 ## Pancake
 
 Pancake is a new programming language, developed at Trustworthy Systems in
