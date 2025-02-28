@@ -60,12 +60,16 @@ co-ordination with other researchers, with the goal of creating verified
 device drivers.
 
 Pancake, is not mature yet but is receiving internal use for writing
-drivers.
+and formally verifying drivers.
 
-You can find out more about the Pancake project [here](https://trustworthy.systems/projects/pancake/).
+You can find out more about the Pancake project
+[here](https://trustworthy.systems/projects/pancake/).
 
 ## Rust
 
-Rust is becoming popular within the embedded space and with the recent [first-class Rust support for seL4](https://github.com/seL4/rust-sel4)
-we have started to experiment with Rust but do not yet have any
-components written in Rust. This is something on our roadmap though.
+Rust is becoming popular within the embedded space and now with
+[first-class Rust support for seL4](https://github.com/seL4/rust-sel4)
+it is fairly easy to write Rust programs for an seL4 environment.
+
+At this stage, we have only use Rust to write certain device drivers but
+are interested in providing Rust bindings for LionsOS APIs in the future.
