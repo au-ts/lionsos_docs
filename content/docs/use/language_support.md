@@ -36,7 +36,8 @@ We do not necessarily *want* to use the full extent of a libc (in particular slo
 the asynchronous APIs that we mostly use.
 
 Our [current plan](https://github.com/au-ts/lionsos/issues/48) is to create a libc for LionsOS-based
-system using the [picolibc](https://github.com/picolibc/picolibc) project.
+system using the [picolibc](https://github.com/picolibc/picolibc) project, but at the moment
+we use a fork of [musllibc](https://github.com/au-ts/musllibc).
 
 ## MicroPython
 
