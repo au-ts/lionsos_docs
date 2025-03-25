@@ -19,7 +19,7 @@ You can find the tag and associated downloads on [GitHub](https://github.com/au-
 * Add QEMU (AArch64) support for the Kitty example system.
 * Various improvements to the file system protocol and client library.
   * In general the library is now more explicit and supports batch processing
-    of commands and completetions.
+    of commands and completions.
 * Add file system server libray to make it easier to implement
   file systems.
 * Fixes and stability improvements across various components such as NFS, MicroPython,
