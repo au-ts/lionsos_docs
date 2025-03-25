@@ -12,9 +12,9 @@ You can find the tag and associated downloads on [GitHub](https://github.com/au-
 
 <div style="width: 75%">
 
-* Update to Microkit 2.0.1.
-* Update to sDDF 0.6.0.
-* Update to libvmm 0.1.0.
+* Update to [Microkit 2.0.1](https://github.com/seL4/microkit/releases/2.0.1).
+* Update to [sDDF 0.6.0](https://github.com/au-ts/sddf/releases/0.6.0).
+* Update to [libvmm 0.1.0](https://github.com/au-ts/libvmm/releases/0.1.0).
 * Add FAT file system support.
 * Add QEMU (AArch64) support for the Kitty example system.
 * Various improvements to the file system protocol and client library.
