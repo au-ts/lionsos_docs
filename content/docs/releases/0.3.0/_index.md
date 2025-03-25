@@ -43,7 +43,7 @@ are not dependent on the user's specific system.
 This is done via a 'metaprogram', a program written by the user which describes their
 system, what components exists, what I/O systems exist, etc.
 
-The tooling is still experimental, and are actively developing it to improve and mature
+The tooling is still experimental, and we are actively developing it to improve and mature
 it.
 
 </div>
