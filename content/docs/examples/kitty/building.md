@@ -19,7 +19,9 @@ Run the following commands depending on your machine:
 {{% tabs "dependencies" %}}
 {{% tab "Ubuntu/Debian" %}}
 ```sh
-sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compiler unzip git qemu-system-arm
+sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compiler unzip git qemu-system-arm python3 python3-pip
+# If you see 'error: externally-managed-environment', add --break-system-packages
+pip3 install sdfgen=={{< sdfgen_version >}}
 ```
 {{% /tab %}}
 {{% tab "macOS" %}}
@@ -29,16 +31,20 @@ sudo apt update && sudo apt install make cmake clang lld llvm device-tree-compil
 # echo export PATH="/opt/homebrew/Cellar/llvm/16.0.6/bin:$PATH" >> ~/.zshrc
 # Homebrew will print out the correct path to add
 brew install make dtc llvm qemu
+# If you see 'error: externally-managed-environment', add --break-system-packages
+pip3 install sdfgen=={{< sdfgen_version >}}
 ```
 {{% /tab %}}
 {{% tab "Arch" %}}
 ```sh
-sudo pacman -Sy make clang lld dtc
+sudo pacman -Sy make clang lld dtc python3 python-pip
+# If you see 'error: externally-managed-environment', add --break-system-packages
+pip3 install sdfgen=={{< sdfgen_version >}}
 ```
 {{% /tab %}}
 {{% tab "Nix" %}}
 ```sh
-nix-shell
+nix develop
 ```
 {{% /tab %}}
 {{% /tabs %}}
@@ -50,20 +56,20 @@ Run the following commands depending on your machine:
 {{% tab "Linux (x64)" %}}
 
 ```sh
-wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-linux-x86-64.tar.gz
-tar xf microkit-sdk-1.4.1-linux-x86-64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/{{< microkit_version >}}/microkit-sdk-{{< microkit_version >}}-linux-x86-64.tar.gz
+tar xf microkit-sdk-{{< microkit_version >}}-linux-x86-64.tar.gz
 ```
 {{% /tab %}}
 {{% tab "macOS (ARM64)" %}}
 ```sh
-wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-macos-aarch64.tar.gz
-tar xf microkit-sdk-1.4.1-macos-aarch64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/{{< microkit_version >}}/microkit-sdk-{{< microkit_version >}}-macos-aarch64.tar.gz
+tar xf microkit-sdk-{{< microkit_version >}}-macos-aarch64.tar.gz
 ```
 {{% /tab %}}
 {{% tab "macOS (x64)" %}}
 ```sh
-wget https://github.com/seL4/microkit/releases/download/1.4.1/microkit-sdk-1.4.1-macos-x86-64.tar.gz
-tar xf microkit-sdk-1.4.1-macos-x86-64.tar.gz
+wget https://github.com/seL4/microkit/releases/download/{{< microkit_version >}}/microkit-sdk-{{< microkit_version >}}-macos-x86-64.tar.gz
+tar xf microkit-sdk-{{< microkit_version >}}-macos-x86-64.tar.gz
 ```
 {{% /tab %}}
 {{% /tabs %}}
