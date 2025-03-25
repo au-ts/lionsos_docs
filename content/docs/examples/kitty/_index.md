@@ -114,7 +114,7 @@ primarily because MicroPython allows users to add their own ports without changi
 any internal code.
 
 MicroPython is very configurable, the minimum functionality MicroPython needs to
-run a way to output and receive on a serial device. From there, everything added
+run is a way to output and receive on a serial device. From there, everything added
 like timing, networking and file systems is up to what you need from MicroPython.
 
 More information about porting can be found [here](https://docs.micropython.org/en/latest/develop/porting.html).
