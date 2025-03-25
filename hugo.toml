@@ -12,6 +12,7 @@ unsafe = true
   BookTheme = 'dark'
   BookSection = 'docs'
   BookRepo = 'https://github.com/au-ts/lionsos_docs'
+  version = '0.2.0'
 
 [menu]
 [[menu.after]]
