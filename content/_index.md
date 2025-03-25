@@ -6,12 +6,11 @@ type: docs
 # The Lions Operating System
 
 {{< hint info >}}
-LionsOS is currently at version {{ .Site.Params.Version }} and is undergoing active research and
+LionsOS is currently at version {{< version >}} and is undergoing active research and
 development, it does not have a concrete verification story yet.
 
 It is not expected for LionsOS to be stable at this time, but it
-is available for others to experiment with. For more info, see
-[Status & Roadmap](/docs/status_and_roadmap).
+is available for others to experiment with.
 {{< /hint >}}
 
 LionsOS is an operating system based on the [seL4 microkernel](https://sel4.systems)
