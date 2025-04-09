@@ -65,7 +65,7 @@ Driver Framework and hence they should be contributed there.
 When writing a new driver or virtualiser you will need to be
 familiar with the general design of sDDF as well as the design of
 the device class you are working with. This can be found in the
-[design documentation](https://trustworthy.systems/projects/drivers/sddf-design.pdf).
+[design documentation](https://trustworthy.systems/projects/drivers/sddf-design-latest.pdf).
 
 New drivers and virtualisers are welcomed.  These will generally be
 contributed via pull requests to the
