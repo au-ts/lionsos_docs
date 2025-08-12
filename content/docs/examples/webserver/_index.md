@@ -31,7 +31,7 @@ parts listed, only the ones necessay for a serial and ethernet connection.
 Below is a diagram of the (simplified) architecture of the web server
 system that contains all of the various components involved.
 
-<div style="background-color: white; display: inline-block;">
+<div style="background-color: white; display: inline-block; padding: 0.5rem">
     <img src="/webserver.svg" alt="Web server architecture diagram" />
 </div>
 
